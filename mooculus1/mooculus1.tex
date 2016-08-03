@@ -1,0 +1,45 @@
+\documentclass[10pt,handout,twocolumn,twoside,wordchoicegiven]{xourse}
+
+
+\input{../preamble.tex}
+
+%% \iftikzexport
+%% \newcommand\chapterstyle{}
+%% \newcommand\sectionstyle{}
+%% \else
+%% \usepackage{lulu1}
+%% \fi
+\usepackage{lulu1}
+
+\title{Math 160 Calculus 1 Labs for Colorado State University}
+
+\begin{document}
+\maketitle
+
+\setcounter{tocdepth}{2}
+
+\part{Lab 1: Tolerance}
+
+%% Lab 1 Tolerance
+\chapterstyle
+\activity{../ToleranceLab/titlePage.tex}
+\sectionstyle
+\activity{../ToleranceLab/ToleranceLab.tex}
+
+
+
+\part{Lab 2: Linear Approximation}
+
+%% Lab 2 Linear Approximation
+\chapterstyle
+\activity{../ToleranceLab/titlePage.tex}
+\sectionstyle
+\activity{../LinApproxLab/LinApproxLab.tex}
+%\activity{../whatIsALimit/digInWhatIsALimit.tex}
+
+
+
+
+\iftikzexport\else\printindex\fi
+
+\end{document}
