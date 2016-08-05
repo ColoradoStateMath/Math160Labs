@@ -229,6 +229,8 @@ answer by $\answer[tolerance=0.000001]{0.167820}$ units.
 \end{explanation}
 \end{example}
 
+Notice that we approximated $\sqrt[3]{50}$ using two different linear approximations of $\sqrt[3]{x}$ and we got two different approximations of $\sqrt[3]{50}$.
+
 
 %%% Comparison of approximations
 \begin{question}
@@ -238,6 +240,34 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
    \choice{The approximation using $x=27$}
    \choice[correct]{The approximation using $x=64$}
 \end{multipleChoice}
+
+
+
+\begin{image}
+%\begin{marginfigure}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=20,xmax=70,ymin=2.5,ymax=4.5,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=150,smooth,domain=(20:70)] {x^(1/3))};
+          \addplot [very thick, penColor2, domain=(20:70)] {x/27+2};
+          \addplot [very thick, penColor3, domain=(20:70)] {x/48+8/3};
+          \addplot [textColor,dashed] plot coordinates {(50,0) (50,3.68403149864)};
+          
+          \node at (axis cs:55,3.8) [penColor] {$f$};
+          \node at (axis cs:55,4.3) [penColor2] {$m$};
+          \node at (axis cs:55,4.3) [penColor3] {$\l$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(50,3.68403149864)};  %% closed hole            
+        \end{axis}
+\end{tikzpicture}
+%\caption{A linear approximation of $f(x) = \sqrt[3]{x}$ at $x=64$.}
+%\label{figure:la sqrt3x}
+%\end{marginfigure}
+\end{image}
 
 
 
