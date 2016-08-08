@@ -180,12 +180,19 @@ To start, write
 \[
 \ddx f(x) = \ddx x^{1/3} = \frac{1}{\answer[given]{3x^{2/3}}}.
 \]
-So our linear approximation is
+By using our formula for linear approximations, our linear 
+approximation for $f(x)=\sqrt[3]{x}$ at $x=27$ is
 \begin{align*}
-m(x) &= \frac{1}{3\cdot 27^{2/3}} (x-27) + \answer[given]{3} \\
-&= \frac{1}{\answer[given]{27}} (x-27) + 3\\
-&= \answer[given]{1/27}x + \answer[given]{2}.
+m(x) &= \answer[given]{1/27}x + \answer[given]{2}.
 \end{align*}
+
+
+
+%\begin{align*}
+%m(x) &= \frac{1}{3\cdot 27^{2/3}} (x-27) + \answer[given]{3} \\
+%&= \frac{1}{\answer[given]{27}} (x-27) + 3\\
+%&= \answer[given]{1/27}x + \answer[given]{2}.
+%\end{align*}
 \begin{image}
 %\begin{marginfigure}
 \begin{tikzpicture}
@@ -222,10 +229,6 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
 answer by $\answer[tolerance=0.000001]{0.167820}$ units.
 
-%Now we evaluate $\l(50) \approx 3.71$ and compare it to
-%$\sqrt[3]{50}\approx 3.68$.  From this we see that the linear
-%approximation, while perhaps inexact, is computationally \textbf{easier}
-%than computing the cube root.
 \end{explanation}
 \end{example}
 
@@ -237,10 +240,12 @@ Notice that we approximated $\sqrt[3]{50}$ using two different linear approximat
 Compare your linear approximations when using $x=64$ and $x=27$. Which linear approximation of $\sqrt[3]{x}$ gives a better approximation of $\sqrt[3]{50}$?
 
 \begin{multipleChoice}
-   \choice{The approximation using $x=27$}
-   \choice[correct]{The approximation using $x=64$}
+   \choice{The approximation using $x=27$, because $27$ is closer to $50$ than $64$.}
+   \choice{The approximation using $x=27$, because $64$ is closer to $50$ than $27$.}
+   \choice[correct]{The approximation using $x=64$, because $64$ is closer to $50$ than $27$.}
+   \choice[correct]{The approximation using $x=64$, because $27$ is closer to $50$ than $64$.}
 \end{multipleChoice}
-
+\end{question}
 
 
 \begin{image}
@@ -253,14 +258,14 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
             every axis y label/.style={at=(current axis.above origin),anchor=south},
             every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]        
-          \addplot [very thick, penColor, samples=150,smooth,domain=(20:70)] {x^(1/3))};
+          \addplot [very thick, penColor, samples=250,smooth,domain=(20:70)] {x^(1/3))};
           \addplot [very thick, penColor2, domain=(20:70)] {x/27+2};
           \addplot [very thick, penColor3, domain=(20:70)] {x/48+8/3};
           \addplot [textColor,dashed] plot coordinates {(50,0) (50,3.68403149864)};
           
-          \node at (axis cs:55,3.8) [penColor] {$f$};
-          \node at (axis cs:55,4.3) [penColor2] {$m$};
-          \node at (axis cs:55,4.3) [penColor3] {$\l$};
+          \node at (axis cs:42,3.1) [penColor] {$f$};
+          \node at (axis cs:55,4.2) [penColor2] {$m$};
+          \node at (axis cs:35,3.5) [penColor3] {$\l$};
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(50,3.68403149864)};  %% closed hole            
         \end{axis}
 \end{tikzpicture}
@@ -269,9 +274,6 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
 %\end{marginfigure}
 \end{image}
 
-
-
-\end{question}
 
 
 
