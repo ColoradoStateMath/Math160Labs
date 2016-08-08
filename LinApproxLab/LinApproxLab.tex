@@ -277,19 +277,19 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
 %%% Finding the range of $x=a$ values such that the linear
 %approximation will be so close for a particular value.
 \begin{example}
-Now we will determine what range of $a$ values we can use to ensure
-that the linear approximation $\l(x)$ of $f(x)=\sqrt[3]{x}$ 
+Now we will determine what range of integers $a$ values we can use to ensure
+that the linear approximation $g(x)$ of $f(x)=\sqrt[3]{x}$ 
 at $x=a$ will be within a tolerance of $0.01$ of $\sqrt[3]{50}$
 when approximating $\sqrt[3]{50}$.
 
-Recall that $\l(x) = f'(a)(x-a) + f(a)$.\\
+Recall that $g(x) = f'(a)(x-a) + f(a)$.
 
-We want to konw what $a$ values for $\l(x)$ have the property that $|\l(50) - \sqrt[3]{50}|<0.01$.
+We want to know what $a$ values for $\l(x)$ have the property that $|g(50) - \sqrt[3]{50}|<0.01$.
 
-Since $\sqrt[3]{50} \approx 3.684031$, we need to find for what $a$ values $\l(50) = 3.694031$, and $\l(50) = 3.674031$
+Since $\sqrt[3]{50} \approx 3.684031$, we need to find for what $a$ values $g(50) = 3.694031$, and $g(50) = 3.674031$.
 
 \[]
-\graph{l\left(a\right)=\ \frac{1}{3a^{\frac{2}{3}}}\left(50-a\right)\ +\ a^{\frac{1}{3}}, y=50^{1/3} + 0.01, y=50^{1/3} - 0.01}
+\graph[xmin=48, xmax=52, ymin=3.55, ymax=3.85]{f\left(x\right)\ =\ x^{\frac{1}{3}}, g\left(x\right)\ =\ f'\left(a\right)\left(x-a\right)\ +\ f\left(a\right)\ , a=43, y\ =\ 3.694031,y\ =\ 3.674031}
 \]
 
 
