@@ -42,6 +42,9 @@ What point should an approximation of $f(x)$ at $x=3$ go through?
 \[
 (\answer{3},\answer{5})
 \]
+\begin{hint}
+Should the linear approximation go through the point at which it is approximating?
+\end{hint}
 
 
 \begin{problem}
@@ -50,6 +53,9 @@ What is the equation of the line tangent to $f(x)$ at $x-2$? $(y=mx+b)$
 y = \answer[given]{2x-1}
 \]
 
+\begin{hint}
+Think $y=mx+b$
+\end{hint}
 
 \begin{feedback}
 Here's some feedback
@@ -88,6 +94,9 @@ Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line tangent t
 \[
 \graph[panel]{a=1, f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2, t(x) = f'(a)(x-a)+ f(a)}
 \]
+
+Notice how the linear approximation (the purple line) hugs
+$f(x)$ (the green line) at the $x=a$ value!
 \end{example}
 
 A linear approximation of $f$ is a ``good'' approximation as long as
@@ -243,7 +252,7 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
    \choice{The approximation using $x=27$, because $27$ is closer to $50$ than $64$.}
    \choice{The approximation using $x=27$, because $64$ is closer to $50$ than $27$.}
    \choice[correct]{The approximation using $x=64$, because $64$ is closer to $50$ than $27$.}
-   \choice[correct]{The approximation using $x=64$, because $27$ is closer to $50$ than $64$.}
+   \choice{The approximation using $x=64$, because $27$ is closer to $50$ than $64$.}
 \end{multipleChoice}
 
 \begin{image}
@@ -270,34 +279,36 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
 %\label{figure:la sqrt3x}
 %\end{marginfigure}
 \end{image}
+
+As a warning: not all approximations are over estimates! This just came about from this example.
 \end{question}
 
 
 
-%%% Finding the range of $x=a$ values such that the linear
-%approximation will be so close for a particular value.
-\begin{example}
-Now we will determine what range of integers $a$ values we can use to ensure
-that the linear approximation $g(x)$ of $f(x)=\sqrt[3]{x}$ 
-at $x=a$ will be within a tolerance of $0.01$ of $\sqrt[3]{50}$
-when approximating $\sqrt[3]{50}$.
-
-Recall that $g(x) = f'(a)(x-a) + f(a)$.
-
-We want to know what $a$ values for $\l(x)$ have the property that $|g(50) - \sqrt[3]{50}|<0.01$.
-
-Since $\sqrt[3]{50} \approx 3.684031$, we need to find for what $a$ values $g(50) = 3.694031$, and $g(50) = 3.674031$.
-
-\[]
-\graph[xmin=48, xmax=52, ymin=3.55, ymax=3.85]{f\left(x\right)\ =\ x^{\frac{1}{3}}, g\left(x\right)\ =\ f'\left(a\right)\left(x-a\right)\ +\ f\left(a\right)\ , a=43, y\ =\ 3.694031,y\ =\ 3.674031}
-\]
-
-
-
-
-
-
-\end{example}
+%%%% Finding the range of $x=a$ values such that the linear
+%%approximation will be so close for a particular value.
+%\begin{example}
+%Now we will determine what range of integers $a$ values we can use to ensure
+%that the linear approximation $g(x)$ of $f(x)=\sqrt[3]{x}$ 
+%at $x=a$ will be within a tolerance of $0.01$ of $\sqrt[3]{50}$
+%when approximating $\sqrt[3]{50}$.
+%
+%Recall that $g(x) = f'(a)(x-a) + f(a)$.
+%
+%We want to know what $a$ values for $\l(x)$ have the property that $|g(50) - \sqrt[3]{50}|<0.01$.
+%
+%Since $\sqrt[3]{50} \approx 3.684031$, we need to find for what $a$ values $g(50) = 3.694031$, and $g(50) = 3.674031$.
+%
+%\[]
+%\graph[xmin=48, xmax=52, ymin=3.55, ymax=3.85]{f\left(x\right)\ =\ x^{\frac{1}{3}}, g\left(x\right)\ =\ f'\left(a\right)\left(x-a\right)\ +\ f\left(a\right)\ , a=43, y\ =\ 3.694031,y\ =\ 3.674031}
+%\]
+%
+%
+%
+%
+%
+%
+%\end{example}
 
 
 
@@ -318,8 +329,8 @@ To start, write
 \]
 so our linear approximation is
 \begin{align*}
-\l(x) &= \answer[given]{\cos(0)}\cdot(x-0) + 0\\
-&= x.
+\l(x) &= \answer[given]{\cos(0)}\cdot(x-\answer[given]{0}) + \answer[given]{0}\\
+&= \answer[given]{x}.
 \end{align*}
 \begin{image}
 %\begin{marginfigure}
@@ -355,6 +366,326 @@ we see that the approximation is quite good. For this reason, it is common
 to approximate $\sin(x)$ with its linear approximation $\l(x) = x$
 when $x$ is near zero.  
 %see Figure~\ref{figure:la sin}.
+\end{explanation}
+\end{example}
+
+
+%%% Approximating periodicity of a pendulum!
+\begin{example}%\label{exam:Periodicity of a pendulum}
+Consider a pendulum with ball $B$ with mass $m$ hanging from a string
+with length $L$ hanging from a block of woods at pivot point $P$.
+Below is a picture of the pendulum that is displaced with angle
+$\theta$ from equilibrium.
+
+%% Picture of pendulum 
+%Edited from http://tex.stackexchange.com/questions/219038
+%/tikz-draw-angle-with-label-between-lines
+\begin{center}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\begin{tikzpicture}
+    \coordinate (origo) at (0,0);
+    \coordinate (pivot) at (1,5);
+
+    % draw axes
+    \fill[black] (origo) circle (0.05);
+    \node[below left=1pt of {(0,0)}] {Point $P$};
+    \draw[thick,gray,->] (origo) -- ++(4,0) node[black,right] {};
+    \draw[thick,dashed, gray,->] (origo) -- ++(0,-4) node (mary) [black,below] {};
+
+    % draw roof
+    \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
+    \draw[thick] ($ (origo) + (-1,0) $) -- ($ (origo) + (1,0) $);
+
+    \draw[thick] (origo) -- ++(300:3) coordinate (bob);
+    \fill (bob) circle (0.2);
+    \node[below left=5pt of {(1.5,-2.5)}] {$M$};
+
+    \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
+  \end{tikzpicture}
+\end{center}
+
+In this model when the mass is directly below the pivot point $P$
+(on the dashed line), the string is in equilibrium and doesn't move.
+
+Suppose we'd like to find out how long it takes this pendulum
+to swing back and forth (one period).
+
+\begin{explanation}
+To find the period of the pendulum, we need to understand how the pendulum moves.
+
+Note that the position of the pendulum is completely determined
+by angle of displacement $\theta$. If we put the pendulum
+at a certain $\theta$ and let go, the pendulum will swing back
+and forth. Therefore the angle $\theta$ is a function of time, $t$.
+
+Newton's second law of motion implies the following 
+relationship holds in this system:
+
+\[
+-m g L \phantom{.} \sin(\theta) = m L^2 \phantom{.}\dfrac{d^2 \theta}{d t^2}
+\]
+where $g$ is earth's gravitational constant.
+
+Our goal is to solve this differential equation to find what function
+$\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swing.
+
+Manipulate the above equation so that '$0$' is on one side and
+the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
+
+\[
+0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
+\]
+
+Note that $L,m,g>0$, so we can divide the equality by of these
+to get an equivalent statement. Manipulate the above equality 
+so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$ is $1$.
+
+\[
+0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{\answer[given]{g}}{\answer[given]{L}} \phantom{.} \sin(\theta)
+\]
+
+\begin{question}
+Does the above relationship depend on the length of the string?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+\begin{feedback}
+There's no way to eliminate $L$ from the equation, so the solution
+to the differential equation with depend on the length of the string $L$.
+\end{feedback}
+\end{question}
+
+\begin{question}
+Does the above relationship depend on the gravitional constant?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+\begin{feedback}
+There's no way to eliminate $g$ from the equation, so the solution
+to the differential equation with depends on earth's gravitational
+constant $g$.
+\end{feedback}
+\end{question}
+
+\begin{question}
+Does the above relationship depend on the mass of ball?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+\begin{feedback}
+By dividing by $m$, we were able to eliminate the mass $m$ from
+the equation. Therefore the solution to the differential equation
+A.K.A. the position and velocity of ball's path doesn't depend
+on the mass of the ball. Even though $m$ was in the initial equality,
+it isn't relevant to the solution. Holy smokes!
+\end{feedback}
+\end{question}
+
+Now let's try to solve this differential equation!
+
+\begin{prompt}
+\[
+0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{g}{L} \sin(\theta)
+\]
+\end{prompt}
+
+Now we will utilize the fact that $\theta$, the position of the ball,
+is a function of time. We are trying to solve the differential
+equation above so that we can find the period of the swing of the pendulum.
+
+Manipulate the above equation to so that $\dfrac{d^2 \theta}{d t^2}$ is in terms of $\theta$.
+
+\begin{prompt}
+\[
+\dfrac{d^2 \theta}{d t^2}  = \answer[given]{\dfrac{-g}{L} \sin(\theta)}
+\]
+\end{prompt}
+%%%% Make this into a better format (above)
+
+The differential equation is too tough for us to solve at the moment,
+but we can solve something similar.
+
+Let's solve this differential equation for small displacements
+of $\theta$. We will replace '$\sin(\theta)$ with a linear approximation
+of $\sin(\theta)$.
+
+\begin{question}
+If we want to solve this differential displacements from equilibrium, at value of $\theta$ should we approximate $\sin(\theta)$?
+
+\begin{prompt}
+We find a linear approximation of $\sin(\theta)$ at $\theta = \answer[given]{0}$.
+\end{prompt}
+\end{question}
+
+\begin{question}
+What is a linear approximation of $\sin(\theta)$ at the above theta value?
+
+\begin{prompt}
+\[
+\sin(\theta) \approx \answer[given]{\theta}
+\]
+\end{prompt}
+
+\begin{hint}
+Remember $\theta$ is the variable, not $x$.
+\end{hint}
+\begin{hint}
+You've already found this early this earlier in this lab.
+\end{hint}
+\end{question}
+
+This is actually a surprisingly good approximation for 
+$|\theta|\leq \frac{\pi}{12} = 15^\circ$! So "small angles in
+this context is for angles that deviate no more that $15^\circ$ from equilibrium.
+
+Therefore we are trying to find a solution to
+
+\[
+\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta
+\]
+
+or for the constant $C=\frac{g}{L}$,
+
+\[
+\dfrac{d^2 \theta}{d t^2}  = -C\theta.
+\]
+
+Another way to phrase this is that $\theta$ is a functions whose
+second derivative is $-1$ times a scalar $C$ of the original function.
+
+\begin{question}
+Do you know any types of functions whose \emph{second} derivative
+is $-1$ times itself (disregarding the $C$)? Which of the following have at least one function that has this property.
+
+\begin{selectAll}
+\choice[correct]{Polynomials of degree $0$ (Constant functions)}
+\choice{Polynomials of degree $1$ or bigger}
+\choice[correct]{Trigonometric functions}
+\end{selectAll}
+\end{question}
+
+\begin{question}
+Which polynomial $\theta = f(t)$ has the property that it's second
+derivative is $-1$ times itself ($\dfrac{d^2 \theta}{d t^2} = f''(t) = -f(t)$?
+
+\begin{prompt}
+The polynomial function $f(t) = \answer[given]{0}$ has the property that $f''(t) = -f(t)$.
+\end{prompt}
+\begin{hint}
+Don't over think it.
+\end{hint}
+\begin{hint}
+It is polynomial in the variable $t$.
+\end{hint}
+\begin{hint}
+It is actually a constant function.
+\end{hint}
+\end{question}
+
+This is our equilibrium solution! This function is $0$ at $t=0$.
+
+\begin{question}
+Which of the following trigonometric functions have this property
+($\dfrac{d^2 \theta}{d t^2} = -\theta$)? Select all such functions.
+\begin{selectAll}
+\choice[correct]{$\sin(t)$}
+\choice[correct]{$\cos(t)$}
+\choice{$\tan(t)$}
+\choice{$\csc(t)$}
+\choice{$\csc(t)$}
+\choice{$\csc(t)$}
+\end{selectAll}
+\end{question}
+
+\begin{question}
+Since we are simulating motion when letting go of the pendulum
+from a stand still, which of functions you picked above would
+accurately simulate this situation?
+\begin{selectAll}
+\choice{$\sin(t)$}
+\choice[correct]{$\cos(t)$}
+\choice{$\tan(t)$}
+\choice{$\csc(t)$}
+\choice{$\csc(t)$}
+\choice{$\csc(t)$}
+\end{selectAll}
+\begin{hint}
+We want that the pendulum is not moving at $t=0$.
+\end{hint}
+\begin{hint}
+We want a function $f(t)$ that $f'(t) = 0$ at $t=0$.
+\end{hint}
+\end{question}
+
+We're almost there! We know what the function generally looks like!
+
+We want to solve the differential equation
+
+\[
+\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta
+\]
+
+or for the constant $C=\frac{g}{L}$,
+
+\[
+\dfrac{d^2 \theta}{d t^2}  = -C\theta.
+\]
+
+For $\theta = \cos(ax+b)$
+
+\begin{align*}
+    \dfrac{d^2}{d t^2}(\theta) &= \dfrac{d^2}{d t^2}(\cos(a x + b))\\
+    &= \dfrac{d}{d t} \Big( \answer[given]{- a \sin(a x+b)}\Big)\\
+    &= \answer[given]{-a^2 \cos(a x+b)}\\
+    &= -a^2 \theta
+\end{align*}
+
+\begin{question}
+So if we are looking for a solution to $\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta$,
+then solutions to this differential equation is $\theta = \cos(ax+b)$ where
+
+\begin{prompt}
+$b = \answer[given]{0}$
+\end{prompt}
+
+and 
+
+\begin{prompt}
+$a^2 = \answer[given]{g/L}$.
+\end{prompt}
+
+Assuming $a>0$, then 
+
+\begin{prompt}
+$a = \dfrac{\answer[given]{\sqrt{g}}}{\answer[given]{\sqrt{L}}}$
+\end{prompt}
+\end{question}
+
+\begin{question}
+Given your solution to the differential equation above, what is the period of a ball with mass $m$ on a string with length $L$ which is displaced at "small" angles?
+
+\[
+(\answer[given]{2\pi})\sqrt{\Big(\answer[given]{L/g}\Big)}
+\]
+\begin{hint}
+For $A\sin(ax+b)$ or $A\cos(ax+b)$, the period of the function is $\dfrac{2\pi}{a}$.
+\end{hint}
+\end{question}
+
+
+\begin{question}
+Given a ball with mass $0.6$ kilograms hanging from a string with length $7$ meters, what is the period of a pendulum swing when the swing doesn't deviate more than $\frac{\pi}{12}$ radians from a free hang (where gravitational constant $9.8$ meters per second)?
+
+\begin{prompt}
+The period is approximately $\answer[tolerance=0.01]{2*3.1415*0.84515}$.
+\end{prompt}
+\end{question}
+
+
+%http://www.acs.psu.edu/drussell/Demos/Pendulum/Pendula.html
 \end{explanation}
 \end{example}
 
