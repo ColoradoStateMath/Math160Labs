@@ -39,9 +39,11 @@ What is the slope of the line tangent to $f(x)$ at $x=3$?
 \]
 
 What point should an approximation of $f(x)$ at $x=3$ go through?
-\[
+
+\begin{prompt}
 (\answer[given]{3}, \answer[given]{5})
-\]
+\end{prompt}
+
 \begin{hint}
 Should the linear approximation go through the point at which it is approximating?
 \end{hint}
@@ -414,9 +416,10 @@ to swing back and forth (one period).
 To find the period of the pendulum, we need to understand how the pendulum moves.
 
 Note that the position of the pendulum is completely determined
-by angle of displacement $\theta$. If we put the pendulum
-at a certain $\theta$ and let go, the pendulum will swing back
-and forth. Therefore the angle $\theta$ is a function of time, $t$.
+by the angle of displacement $\theta$. If we move the ball of the pendulum
+to a certain $\theta\neq 0$ and let go, the pendulum will swing back
+and forth. Therefore the angle $\theta$ is a function of time, $t$. 
+So how does this bad-boy move?
 
 Newton's second law of motion implies the following 
 relationship holds in this system:
@@ -426,19 +429,20 @@ relationship holds in this system:
 \]
 where $g$ is earth's gravitational constant.
 
-Our goal is to solve this differential equation to find what function
+Our goal is to solve this differential equation to find what the function
 $\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swing.
 
-Manipulate the above equation so that '$0$' is on one side and
-the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
+Let's get to work. Manipulate the above equation so that '$0$'
+is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
 
 \[
 0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
 \]
 
-Note that $L,m,g>0$, so we can divide the equality by of these
-to get an equivalent statement. Manipulate the above equality 
-so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$ is $1$.
+Note that $L,m,$ and $g$ are constant and greater than $0$, so we can
+divide the equality by of these to get an equivalent statement.
+Manipulate the above equality so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$
+is $1$.
 
 \[
 0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{\answer[given]{g}}{\answer[given]{L}} \phantom{.} \sin(\theta)
