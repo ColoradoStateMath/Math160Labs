@@ -379,6 +379,33 @@ with length $L$ hanging from a block of woods at pivot point $P$.
 Below is a picture of the pendulum that is displaced with angle
 $\theta$ from equilibrium.
 
+%% Picture of pendulum 
+%Edited from http://tex.stackexchange.com/questions/219038
+%/tikz-draw-angle-with-label-between-lines
+\begin{center}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\begin{tikzpicture}
+    \coordinate (origo) at (0,0);
+    \coordinate (pivot) at (1,5);
+
+    % draw axes
+    \fill[black] (origo) circle (0.05);
+    \node[below left=1pt of {(0,0)}] {Point $P$};
+    \draw[thick,gray,->] (origo) -- ++(4,0) node[black,right] {};
+    \draw[thick,dashed, gray,->] (origo) -- ++(0,-4) node (mary) [black,below] {};
+
+    % draw roof
+    \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
+    \draw[thick] ($ (origo) + (-1,0) $) -- ($ (origo) + (1,0) $);
+
+    \draw[thick] (origo) -- ++(300:3) coordinate (bob);
+    \fill (bob) circle (0.2);
+    \node[below left=5pt of {(1.5,-2.5)}] {$M$};
+
+    \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
+  \end{tikzpicture}
+\end{center}
+
 In this model when the mass is directly below the pivot point $P$
 (on the dashed line), the string is in equilibrium and doesn't move.
 
