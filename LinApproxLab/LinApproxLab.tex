@@ -456,7 +456,7 @@ Does the above relationship depend on the length of the string?
 \end{multipleChoice}
 \begin{feedback}
 There's no way to eliminate $L$ from the equation, so the solution
-to the differential equation with depend on the length of the string $L$.
+to the differential equation depends on the length of the string $L$.
 \end{feedback}
 \end{question}
 
@@ -468,7 +468,7 @@ Does the above relationship depend on the gravitional constant?
 \end{multipleChoice}
 \begin{feedback}
 There's no way to eliminate $g$ from the equation, so the solution
-to the differential equation with depends on earth's gravitational
+to the differential equation depends on earth's gravitational
 constant $g$.
 \end{feedback}
 \end{question}
@@ -482,7 +482,7 @@ Does the above relationship depend on the mass of ball?
 \begin{feedback}
 By dividing by $m$, we were able to eliminate the mass $m$ from
 the equation. Therefore the solution to the differential equation
-A.K.A. the position and velocity of ball's path doesn't depend
+(the position/path of the ball) doesn't depend
 on the mass of the ball. Even though $m$ was in the initial equality,
 it isn't relevant to the solution. Holy smokes!
 \end{feedback}
@@ -496,7 +496,7 @@ Now let's try to solve this differential equation!
 \]
 \end{prompt}
 
-Now we will utilize the fact that $\theta$, the position of the ball,
+We will utilize the fact that $\theta$, the position of the ball,
 is a function of time. We are trying to solve the differential
 equation above so that we can find the period of the swing of the pendulum.
 
@@ -679,6 +679,14 @@ For $A\sin(ax+b)$ or $A\cos(ax+b)$, the period of the function is $\dfrac{2\pi}{
 \end{hint}
 \end{question}
 
+If the ball starts at an initial angle of displacement $\theta_0$
+(where $|\theta_0|<\frac{\pi}{12}= 15^\circ$), we can describe
+the position of the ball at any given time by
+
+\[
+\theta(t) = \theta_0 \cos\Big(\sqrt{\frac{g}{L}} t\Big).
+\]
+Pretty neat, huh?
 
 \begin{question}
 Given a ball with mass $0.6$ kilograms hanging from a string with length $7$ meters, what is the period of a pendulum swing when the swing doesn't deviate more than $\frac{\pi}{12}$ radians from a free hang (where gravitational constant $9.8$ meters per second)?
@@ -687,6 +695,8 @@ Given a ball with mass $0.6$ kilograms hanging from a string with length $7$ met
 The period is approximately $\answer[tolerance=0.01]{2*3.1415*0.84515}$.
 \end{prompt}
 \end{question}
+
+
 
 
 %http://www.acs.psu.edu/drussell/Demos/Pendulum/Pendula.html
