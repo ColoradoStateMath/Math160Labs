@@ -38,7 +38,7 @@ What is the slope of the line tangent to $f(x)$ at $x=3$?
 \answer{2}
 \]
 
-\begin{question}
+\begin{problem}
 What point should an approximation of $f(x)$ at $x=3$ go through?
 
 \[
@@ -47,7 +47,7 @@ What point should an approximation of $f(x)$ at $x=3$ go through?
 \begin{hint}
 Should the linear approximation go through the point at which it is approximating?
 \end{hint}
-\end{question}
+\end{problem}
 
 \begin{problem}
 What is the equation of the line tangent to $f(x)$ at $x-2$?
@@ -525,8 +525,8 @@ Now let's try to solve this differential equation!
 0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{g}{L} \sin(\theta)
 \]
 
-We will utilize the fact that $\theta$, the position of the ball,
-is a function of time. We are trying to solve the differential
+We will utilize the fact that $\theta$, the angle of displacement of the ball $B$),
+is a function of time, $t$. We are trying to solve the differential
 equation above so that we can find the period of the swing of the pendulum.
 
 Manipulate the above equation to so that $\dfrac{d^2 \theta}{d t^2}$ is in terms of $\theta$.
@@ -538,9 +538,11 @@ Manipulate the above equation to so that $\dfrac{d^2 \theta}{d t^2}$ is in terms
 The differential equation is too tough for us to solve at the moment,
 but we can solve something similar.
 
+
 Let's solve this differential equation for small displacements
-of $\theta$. We will replace '$\sin(\theta)$ with a linear approximation
+of $\theta$. We will replace `$\sin(\theta)$' with a linear approximation
 of $\sin(\theta)$.
+
 
 \begin{question}
 If we want to solve this differential displacements from equilibrium, at value of $\theta$ should we approximate $\sin(\theta)$?
@@ -565,9 +567,11 @@ You've already found this early this earlier in this lab.
 \end{hint}
 \end{question}
 
-This is actually a surprisingly good approximation for
-$|\theta|\leq \frac{\pi}{12} = 15^\circ$! In this context, "small" angles
+\begin{remark}
+The above approximation is actually a surprisingly good for
+$|\theta|\leq \frac{\pi}{12} = 15^\circ$, so in this context, "small" angles
 are angles that deviate no more that $15^\circ$ from equilibrium, FYI.
+\end{remark}
 
 Therefore we are trying to find a solution to
 
@@ -578,13 +582,13 @@ Therefore we are trying to find a solution to
 or for the constant $C=\frac{g}{L}$,
 
 \[
-\dfrac{d^2 \theta}{d t^2}  = -C\theta.
+\dfrac{d^2 \theta}{d t^2}  = \answer[given]{\theta}.
 \]
 
 Another way to phrase this is that $\theta$ is a functions whose
 second derivative is $-1$ times a scalar $C$ of the original function.
 
-\begin{question}
+
 Do you know any types of functions whose \emph{second} derivative
 is $-1$ times itself (disregarding the $C$)? Which of the following have at least one function that has this property.
 
@@ -593,9 +597,9 @@ is $-1$ times itself (disregarding the $C$)? Which of the following have at leas
 \choice{Polynomials of degree $1$ or bigger}
 \choice[correct]{Trigonometric functions}
 \end{selectAll}
-\end{question}
 
-\begin{question}
+
+\begin{problem}
 Which polynomial $f(t)$ has the property that it's second
 derivative is $-1$ times itself i.e. if
 $\theta=f(t)$, then $\dfrac{d^2 \theta}{d t^2} = f''(t) = -f(t)$?
@@ -612,7 +616,7 @@ It is polynomial in the variable $t$.
 \begin{hint}
 It is actually a constant function.
 \end{hint}
-\end{question}
+\end{problem}
 
 This is our equilibrium solution! This function has $\theta=0$ at $t=0$. In other
 words, this is our solution when we put the ball directly below the point
@@ -620,7 +624,7 @@ that the string is hanging from. This is no surprise though since this
 is the equilibrium. What we \emph{really} want is to find out what happens
 when we place the ball somewhere where the ball actually swings.
 
-\begin{question}
+
 Which of the following trigonometric functions have this property
 ($\dfrac{d^2 \theta}{d t^2} = -\theta$)? Select all such functions.
 \begin{selectAll}
@@ -631,7 +635,7 @@ Which of the following trigonometric functions have this property
 \choice{$\sec(t)$}
 \choice{$\cot(t)$}
 \end{selectAll}
-\end{question}
+
 
 \begin{question}
 Since we are simulating the motion of the pendulum when letting go of the pendulum from
