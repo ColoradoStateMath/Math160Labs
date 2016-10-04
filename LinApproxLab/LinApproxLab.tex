@@ -29,7 +29,7 @@ We use a method called ``linear approximation'' to estimate the value of (compli
 \begin{example}
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
 
-Given a line with slope $m$ through the point $(a, b)$, what is the point slope form of the line?
+Given a line with slope $m$ through the point $(a, b)$, what is the point-slope form of the line?
 \[
 y = \answer[given]{m(x - a) + b}
 \]
@@ -95,7 +95,10 @@ Note that $\l(x)$ is just the line tangent to $f(x)$ at $x=a$.
 
 
 \begin{example}
-Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line (in purple) changes as $a$ varies by using the slider.
+Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line
+tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line
+(in purple) changes as $a$ varies by using the slider. You may need to
+hit `-' (zoom out) in order to see the linear approximations for large $a$ values.
 \[
 \graph[panel]{a=1, f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2, t(x) = f'(a)(x-a)+ f(a)}
 \]
@@ -107,7 +110,7 @@ $f(x)$ (the green line) at the $x=a$ value!
 A linear approximation of $f$ is a ``good'' approximation as long as
 $x$ is ``not too far'' from $a$.
 %As we see from Figure~\ref{figure:informal-tangent}, 
-If one ``zooms in'' on $f$ sufficiently, then $f$ and the linear
+If one ``zooms in'' on $f$ at $x=a$ sufficiently, then $f$ and the linear
 approximation are nearly indistinguishable. As a first example, we
 will see how linear approximations allow us to make approximate
 ``difficult'' computations.
@@ -128,6 +131,24 @@ So our linear approximation is
 &= \frac{1}{\answer[given]{48}} (x-64) + 4\\
 &= \answer[given]{1/48}x + \answer[given]{8/3}.
 \end{align*}
+
+\[
+\graph[panel]{}
+\]
+
+\begin{question}
+Using the linear approximation just found (and the Desmos calculator above),
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.000001]{3.70833333}.
+\]
+\begin{hint}
+Remember to round to 6 decimal places.
+\end{hint}
+\end{question}
+
+
+
+
 \begin{image}
 %\begin{marginfigure}
 \begin{tikzpicture}
@@ -153,6 +174,7 @@ So our linear approximation is
 \end{image}
 
 Now let's use our approximation and true value to find our approximation's error.
+
 
 Use the Desmos widget below to determine the error of your approximation for $\sqrt[3]{50}$, noting that $\sqrt[3]{50} = f(50)$.
 
@@ -200,7 +222,7 @@ accuracy.
 
 %% Approximation using cube root of 27 instead.
 \begin{example}
-Now use a linear approximation of $f(x) =\sqrt[3]{x}$ at ${\bf x=27}$ to
+Now use a linear approximation of $f(x) =\sqrt[3]{x}$ at $\underline{x=27}$ to
 approximate $\sqrt[3]{50}$.
 \begin{explanation}
 To start, write
@@ -213,6 +235,19 @@ approximation for $f(x)=\sqrt[3]{x}$ at $x=27$ is
 m(x) &= \answer[given]{1/27}x + \answer[given]{2}.
 \end{align*}
 
+\[
+\graph[panel]{}
+\]
+
+\begin{question}
+Using the linear approximation just found (and the Desmos calculator above),
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.0000005]{3.851852}.
+\]
+\begin{hint}
+Remember to round to 6 decimal places.
+\end{hint}
+\end{question}
 
 
 %\begin{align*}
@@ -407,7 +442,7 @@ answer a real-life question!
 %%% Approximating periodicity of a pendulum!
 
 \begin{example}
-\textbf{Example.}   Consider a pendulum with ball $B$ with mass $m$ hanging from a string
+Consider a pendulum with ball $B$ with mass $m$ hanging from a string
 with length $L$ hanging from a block of woods at pivot point $P$.
 Below is a picture of the pendulum that is displaced with angle
 $\theta$ from equilibrium.
@@ -466,7 +501,6 @@ $\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swi
 
 Let's get to work. Manipulate the above equation so that `$0$'
 is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
-\textbf{Warning: Leave spaces between any variables being multiplied and type `theta' when you want $\theta$.}
 
 \[
 0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
@@ -475,7 +509,7 @@ is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
 Note that $L,m,$ and $g$ are constant and greater than $0$, so we can
 divide the equality by any of these terms to get an equivalent statement.
 Manipulate the above equality so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$
-is $1$. Be sure to simplify and fractions.
+is $1$. Be sure to simplify fractions.
 
 \[
 0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{\answer[given]{g}}{\answer[given]{L}} \phantom{.} \sin(\theta)
