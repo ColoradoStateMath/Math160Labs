@@ -25,7 +25,7 @@ of (complicated) functions at a given point.
 
 \maketitle
 
-\begin{question}
+\begin{example}
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
 
 Given a line with slope $m$ through the point $(a, b)$, what is the point slope form of the line?
@@ -92,7 +92,7 @@ If $f$ is a differentiable function at $x=a$, then a \textbf{linear
 Note that $\l(x)$ is just the line tangent to $f(x)$ at $x=a$.
 
 \begin{example}
-Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line changes as $a$ varies by using the slider.
+Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line (in purple) changes as $a$ varies by using the slider.
 \[
 \graph[panel]{a=1, f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2, t(x) = f'(a)(x-a)+ f(a)}
 \]
@@ -102,13 +102,13 @@ $f(x)$ (the green line) at the $x=a$ value!
 \end{example}
 
 A linear approximation of $f$ is a ``good'' approximation as long as
-$x$ is ``not too far'' from $a.$
+$x$ is ``not too far'' from $a$.
 %As we see from Figure~\ref{figure:informal-tangent}, 
 If one ``zooms in'' on $f$ sufficiently, then $f$ and the linear
 approximation are nearly indistinguishable. As a first example, we
 will see how linear approximations allow us to make approximate
 ``difficult'' computations.
-\end{question}
+\end{example}
 
 
 %% It maybe useful to compute an approximation using the cube root of 27 instead. Then students can see the difference between their approximations and which is better.
@@ -158,10 +158,24 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 \graph[panel]{f(x) = x^{1/3}, l(x) = (1/48) x + (8/3)}
 \]
 
-
+\begin{question}
 The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
 answer by $\answer[tolerance=0.000001]{0.024302}$ units.
 
+\begin{hint}
+Note that $f(50)$ when plugged into Desmos will give $
+sqrt[3]{50}$.
+\end{hint}
+\begin{hint}
+What will be $\l(50)$ give you in the Desmos calculator?
+\end{hint}
+\begin{hint}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\end{hint}
+\begin{hint}
+What does $f(50)-\l(50)$ give you? Is that what you want?
+\end{hint}
+\end{question}
 %Now we evaluate $\l(50) \approx 3.71$ and compare it to
 %$\sqrt[3]{50}\approx 3.68$.  From this we see that the linear
 %approximation, while perhaps inexact, is computationally \textbf{easier}
@@ -236,14 +250,30 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 \graph[panel]{f(x) = x^{1/3}, m(x) = (1/27) x + 2}
 \]
 
-
+\begin{question}
 The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
 answer by $\answer[tolerance=0.000001]{0.167820}$ units.
+
+\begin{hint}
+Note that $f(50)$ when plugged into Desmos will give $
+sqrt[3]{50}$.
+\end{hint}
+\begin{hint}
+What will be $m(50)$ give you in the Desmos calculator?
+\end{hint}
+\begin{hint}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\end{hint}
+\begin{hint}
+What does $f(50)-m(50)$ give you? Is that what you want?
+\end{hint}
+\end{question}
+
 
 \end{explanation}
 \end{example}
 
-Notice that we approximated $\sqrt[3]{50}$ using two different linear approximations of $\sqrt[3]{x}$ and we got two different approximations of $\sqrt[3]{50}$.
+Notice that we approximated $\sqrt[3]{50}$ using two different linear approximations of $\sqrt[3]{x}$ and hence got two different approximations of $\sqrt[3]{50}$.
 
 
 %%% Comparison of approximations
@@ -282,7 +312,9 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
 %\end{marginfigure}
 \end{image}
 
-As a warning: not all approximations are over estimates! This just came about from this example.
+As a warning: not all approximations are over estimates! This just came about
+from this example. Some linear approximations are over-estimates. Some are
+under-estimates. Some vary for different points you are approximating at!
 \end{question}
 
 
@@ -358,7 +390,7 @@ so our linear approximation is
 %\label{figure:la sin}
 %\end{marginfigure}
 \end{image}
-Hence a linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
+Hence the linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
 and so $\l(0.3) = 0.3$.  Comparing this to $\sin(.3) \approx 0.295$,
 we see that the approximation is quite good. For this reason, it is common
 to approximate $\sin(x)$ with its linear approximation $\l(x) = x$
@@ -367,6 +399,8 @@ when $x$ is near zero.
 \end{explanation}
 \end{example}
 
+Let's apply this notion of linear approximations in a physics application to
+answer a real-life question!
 
 %%% Approximating periodicity of a pendulum!
 \begin{example}%\label{exam:Periodicity of a pendulum}
@@ -396,7 +430,7 @@ $\theta$ from equilibrium.
 
     \draw[thick] (origo) -- ++(300:3) coordinate (bob);
     \fill (bob) circle (0.2);
-    \node[below left=5pt of {(1.5,-2.5)}] {$M$};
+    \node[below left=5pt of {(1.5,-2.5)}] {$B$};
 
     \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
   \end{tikzpicture}
@@ -409,13 +443,12 @@ Suppose we'd like to find out how long it takes this pendulum
 to swing back and forth (one period).
 
 \begin{explanation}
-To find the period of the pendulum, we need to understand how the pendulum moves.
-
-Note that the position of the pendulum is completely determined
-by the angle of displacement $\theta$. If we move the ball of the pendulum
-to a certain $\theta\neq 0$ and let go, the pendulum will swing back
-and forth. Therefore the angle $\theta$ is a function of time, $t$. 
-So how does this bad-boy move?
+First of all to find the period of the pendulum, we need to understand
+how the pendulum moves. Note that the position of the pendulum is completely determined
+by the angle of displacement $\theta$ (Assuming that the string is always tight).
+If we move the ball of the pendulum to a certain $\theta\neq 0$ and let go,
+the pendulum will swing back and forth. Therefore the angle $\theta$
+is a function of time, call it $t$. So how does this bad-boy move?
 
 Newton's second law of motion implies the following 
 relationship holds in this system:
@@ -428,8 +461,9 @@ where $g$ is earth's gravitational constant.
 Our goal is to solve this differential equation to find what the function
 $\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swing.
 
-Let's get to work. Manipulate the above equation so that '$0$'
+Let's get to work. Manipulate the above equation so that `$0$'
 is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
+\textbf{Warning: Leave spaces between any variables being multiplied and type `theta' when you want $\theta$.}
 
 \[
 0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
@@ -438,13 +472,13 @@ is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
 Note that $L,m,$ and $g$ are constant and greater than $0$, so we can
 divide the equality by any of these terms to get an equivalent statement.
 Manipulate the above equality so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$
-is $1$.
+is $1$. Be sure to simplify and fractions.
 
 \[
 0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{\answer[given]{g}}{\answer[given]{L}} \phantom{.} \sin(\theta)
 \]
 
-\begin{question}
+\begin{problem}
 Does the above relationship depend on the length of the string?
 \begin{multipleChoice}
 \choice[correct]{Yes}
@@ -454,7 +488,7 @@ Does the above relationship depend on the length of the string?
 There's no way to eliminate $L$ from the equation, so the solution
 to the differential equation depends on the length of the string $L$.
 \end{feedback}
-\end{question}
+\end{problem}
 
 \begin{question}
 Does the above relationship depend on the gravitational constant?
