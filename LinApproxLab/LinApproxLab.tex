@@ -25,7 +25,7 @@ of (complicated) functions at a given point.
 
 \maketitle
 
-
+\begin{question}
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
 
 Given a line with slope $m$ through the point $(a, b)$, what is the point slope form of the line?
@@ -40,10 +40,9 @@ What is the slope of the line tangent to $f(x)$ at $x=3$?
 
 What point should an approximation of $f(x)$ at $x=3$ go through?
 
-\begin{prompt}
-$(\answer[given]{3}, \answer[given]{5})$
-\end{prompt}
-
+\[
+(\answer[given]{3}, \answer[given]{5})
+\]
 \begin{hint}
 Should the linear approximation go through the point at which it is approximating?
 \end{hint}
@@ -52,15 +51,14 @@ Should the linear approximation go through the point at which it is approximatin
 \begin{problem}
 What is the equation of the line tangent to $f(x)$ at $x-2$? $(y=mx+b)$
 \[
-y = \answer[given]{2x-1}
+y = \answer[given]{2}x + \answer[given]{-1}
 \]
-
 \begin{hint}
 Think $y=mx+b$
 \end{hint}
 
 \begin{feedback}
-Here's some feedback
+Your line should look like this.
 \[
 \graph{f(x) = (x-2)^2+4, y = 2(x-3) + 5}
 \]
@@ -72,11 +70,13 @@ Here's some feedback
 
 %\section{Linear approximation}
 
-Given a function, a \textit{linear approximation} is a fancy phrase
+Given a function, a \textit{linear approximation} (at $x=x_0$) is a fancy phrase
 for something you already know:
+\begin{center}
 \begin{quote}
-  \textbf{The derivative is the slope of the tangent line.}
+  \textbf{The line tangent to the function (at $x=x_0$).}
 \end{quote}
+\end{center}
 %Except in this section, the emphasis is on the \textbf{line}.
 
 
@@ -108,7 +108,7 @@ If one ``zooms in'' on $f$ sufficiently, then $f$ and the linear
 approximation are nearly indistinguishable. As a first example, we
 will see how linear approximations allow us to make approximate
 ``difficult'' computations.
-
+\end{question}
 
 
 %% It maybe useful to compute an approximation using the cube root of 27 instead. Then students can see the difference between their approximations and which is better.
