@@ -138,7 +138,7 @@ So our linear approximation is
 \sqrt[3]{50} \approx \answer[tolerance=0.000001]{3.70833333}.
 \]
 \begin{expandable}
-Hint Remember to round to 6 decimal places.
+Hint: Remember to round to 6 decimal places.
 \end{expandable}
 
 
@@ -183,7 +183,7 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 answer by $\answer[tolerance=0.000001]{0.024302}$ units.
 
 \begin{expandable}
-Note that $f(50)$ when plugged into Desmos will give $
+Hint: Note that $f(50)$ when plugged into Desmos will give $
 sqrt[3]{50}$.
 \begin{expandable}
 What will be $\l(50)$ give you in the Desmos calculator?
@@ -199,6 +199,97 @@ What does $f(50)-\l(50)$ give you? Is that what you want?
 \end{explanation}
 \end{example}
 
+With modern calculators and computing software it may not appear
+necessary to use linear approximations. In fact they are quite
+useful. In cases requiring an explicit numerical approximation, they
+allow us to get a quick rough estimate which can be used as a
+``reality check'' on a more complex calculation. In some complex
+calculations involving functions, the linear approximation makes an
+otherwise intractable calculation possible, without serious loss of
+accuracy.
+
+
+
+%% Approximation using cube root of 27 instead.
+\begin{example}
+Now use a linear approximation of $f(x) =\sqrt[3]{x}$ at $\underline{x=27}$ to
+approximate $\sqrt[3]{50}$.
+\begin{explanation}
+To start, write
+\[
+\ddx f(x) = \ddx x^{1/3} = \frac{1}{\answer[given]{3x^{2/3}}}.
+\]
+By using our formula for linear approximations, our linear 
+approximation for $f(x)=\sqrt[3]{x}$ at $x=27$ is
+\begin{align*}
+m(x) &= \answer[given]{1/27}x + \answer[given]{2}.
+\end{align*}
+
+\[
+\graph[panel]{}
+\]
+
+
+\textbf{Question. } Using the linear approximation just found (and the Desmos calculator above),
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.0000005]{3.851852}.
+\]
+\begin{expandable}
+Remember to round to 6 decimal places.
+\end{expandable}
+
+
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1,xmax=100,ymin=0,ymax=5,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=150,smooth,domain=(0:100)] {x^(1/3))};
+          \addplot [very thick, penColor2, domain=(0:100)] {x/27+2};
+          \addplot [textColor,dashed] plot coordinates {(27,0) (27,3)};
+          \addplot [textColor,dashed] plot coordinates {(0,3) (27,3)};
+          \node at (axis cs:50,3.3) [penColor] {$f$};
+          \node at (axis cs:50,4.3) [penColor2] {$m$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(27,3)};  %% closed hole            
+        \end{axis}
+\end{tikzpicture}
+\end{image}
+
+Now let's use our approximation and true value to find our approximation's error.
+
+Use the Desmos widget below to determine the error of your approximation for $\sqrt[3]{50}$, noting that $\sqrt[3]{50} = f(50)$.
+
+\[
+\graph[panel]{f(x) = x^{1/3}, m(x) = (1/27) x + 2}
+\]
+
+
+\textbf{Question. } The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
+answer by $\answer[tolerance=0.000001]{0.167820}$ units.
+
+\begin{expandable}
+Hint: Note that $f(50)$ when plugged into Desmos will give $
+sqrt[3]{50}$.
+\begin{expandable}
+What will be $m(50)$ give you in the Desmos calculator?
+\begin{expandable}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\end{expandable}
+\begin{expandable}
+What does $f(50)-m(50)$ give you? Is that what you want?
+\end{expandable}
+\end{expandable}
+\end{expandable}
+
+
+\end{explanation}
+\end{example}
+
+Notice that we approximated $\sqrt[3]{50}$ using two different linear approximations of $\sqrt[3]{x}$ and hence got two different approximations of $\sqrt[3]{50}$.
 
 
 
