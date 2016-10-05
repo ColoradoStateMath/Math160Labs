@@ -115,6 +115,91 @@ will see how linear approximations allow us to make approximate
 
 
 
+%%%%%% Aproximation of \sqrt[3]{50} number 1
+\begin{example}
+Use a linear approximation of $f(x) =\sqrt[3]{x}$ at $x=64$ to
+approximate $\sqrt[3]{50}$.
+\begin{explanation}
+To start, write
+\[
+\ddx f(x) = \ddx x^{1/3} = \frac{1}{\answer[given]{3x^{2/3}}}.
+\]
+So our linear approximation is
+\begin{align*}
+\l(x) &= \frac{1}{3\cdot 64^{2/3}} (x-64) + \answer[given]{4} \\
+&= \frac{1}{\answer[given]{48}} (x-64) + 4\\
+&= \answer[given]{1/48}x + \answer[given]{8/3}.
+\end{align*}
+
+
+\textbf{Question. } Using the linear approximation just found (and the Desmos calculator below), 
+
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.000001]{3.70833333}.
+\]
+\begin{expandable}
+Hint Remember to round to 6 decimal places.
+\end{expandable}
+
+
+\[
+\graph[panel]{}
+\]
+
+
+
+
+
+\begin{image}
+\begin{tikzpicture}
+	\begin{axis}[
+            xmin=1,xmax=100,ymin=0,ymax=5,
+            axis lines=center,
+            xlabel=$x$, ylabel=$y$,
+            every axis y label/.style={at=(current axis.above origin),anchor=south},
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]        
+          \addplot [very thick, penColor, samples=150,smooth,domain=(0:100)] {x^(1/3))};
+          \addplot [very thick, penColor2, domain=(0:100)] {x/48+8/3};
+          \addplot [textColor,dashed] plot coordinates {(64,0) (64,4)};
+          \addplot [textColor,dashed] plot coordinates {(0,4) (64,4)};
+          \node at (axis cs:20,2.3) [penColor] {$f$};
+          \node at (axis cs:20,3.3) [penColor2] {$\l$};
+          \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(64,4)};  %% closed hole            
+        \end{axis}
+\end{tikzpicture}
+\end{image}
+
+Now let's use our approximation and true value to find our approximation's error.
+
+
+Use the Desmos widget below to determine the error of your approximation for $\sqrt[3]{50}$, noting that $\sqrt[3]{50} = f(50)$.
+
+\[
+\graph[panel]{f(x) = x^{1/3}, l(x) = (1/48) x + (8/3)}
+\]
+
+\textbf{Question. } The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
+answer by $\answer[tolerance=0.000001]{0.024302}$ units.
+
+\begin{expandable}
+Note that $f(50)$ when plugged into Desmos will give $
+sqrt[3]{50}$.
+\begin{expandable}
+What will be $\l(50)$ give you in the Desmos calculator?
+\begin{expandable}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\begin{expandable}
+What does $f(50)-\l(50)$ give you? Is that what you want?
+\end{expandable}
+\end{expandable}
+\end{expandable}
+\end{expandable}
+
+\end{explanation}
+\end{example}
+
+
 
 
 \end{document}
