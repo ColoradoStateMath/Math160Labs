@@ -19,16 +19,17 @@
 \section{Math 160 Lab 2 \\ Linear Approximation}
 
 \begin{abstract}
-We use a method called ``linear approximation'' to estimate the value
-of (complicated) functions at a given point.
+This is Lab 2 for Math 160 - Due Wednesday, 12 October, 2016. This lab will cover tolerance and provide an introduction to the idea of limits. Unless stated otherwise, compute all values to $6$ decimal places.
+
+We use a method called ``linear approximation'' to estimate the value of (complicated) functions at a given point.
 \end{abstract}
 
 \maketitle
 
-
+\begin{example}
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
 
-Given a line with slope $m$ through the point $(a, b)$, what is the point slope form of the line?
+Given a line with slope $m$ through the point $(a, b)$, what is the point-slope form of the line?
 \[
 y = \answer[given]{m(x - a) + b}
 \]
@@ -38,29 +39,28 @@ What is the slope of the line tangent to $f(x)$ at $x=3$?
 \answer{2}
 \]
 
+\begin{problem}
 What point should an approximation of $f(x)$ at $x=3$ go through?
 
-\begin{prompt}
-$(\answer[given]{3}, \answer[given]{5})$
-\end{prompt}
-
+\[
+(\answer[given]{3}, \answer[given]{5})
+\]
 \begin{hint}
 Should the linear approximation go through the point at which it is approximating?
 \end{hint}
-
+\end{problem}
 
 \begin{problem}
-What is the equation of the line tangent to $f(x)$ at $x-2$? $(y=mx+b)$
+What is the equation of the line tangent to $f(x)$ at $x=3$?
 \[
-y = \answer[given]{2x-1}
+y = \answer[given]{2}x + \answer[given]{-1}
 \]
-
 \begin{hint}
 Think $y=mx+b$
 \end{hint}
 
 \begin{feedback}
-Here's some feedback
+Your line should look like this.
 \[
 \graph{f(x) = (x-2)^2+4, y = 2(x-3) + 5}
 \]
@@ -71,13 +71,13 @@ Here's some feedback
 
 
 %\section{Linear approximation}
-
-Given a function, a \textit{linear approximation} is a fancy phrase
+Given a function, a \textit{linear approximation} (at $x=x_0$) is a fancy phrase
 for something you already know:
+\begin{center}
 \begin{quote}
-  \textbf{The derivative is the slope of the tangent line.}
+  \textbf{The line tangent to the function (at $x=x_0$).}
 \end{quote}
-%Except in this section, the emphasis is on the \textbf{line}.
+\end{center}
 
 
 \begin{definition}\index{linear approximation}
@@ -91,8 +91,12 @@ If $f$ is a differentiable function at $x=a$, then a \textbf{linear
 
 Note that $\l(x)$ is just the line tangent to $f(x)$ at $x=a$.
 
+
 \begin{example}
-Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line changes as $a$ varies by using the slider.
+Below is the graph of $f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2$ and the line
+tangent to $f(x)$ at $x=a$. Feel free to explore how the tangent line
+(in purple) changes as $a$ varies by using the slider. You may need to
+hit `-' (zoom out) in order to see the linear approximations for large $a$ values.
 \[
 \graph[panel]{a=1, f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2, t(x) = f'(a)(x-a)+ f(a)}
 \]
@@ -102,16 +106,16 @@ $f(x)$ (the green line) at the $x=a$ value!
 \end{example}
 
 A linear approximation of $f$ is a ``good'' approximation as long as
-$x$ is ``not too far'' from $a.$
-%As we see from Figure~\ref{figure:informal-tangent}, 
-If one ``zooms in'' on $f$ sufficiently, then $f$ and the linear
+$x$ is ``not too far'' from $a$.
+If one ``zooms in'' on $f$ at $x=a$ sufficiently, then $f$ and the linear
 approximation are nearly indistinguishable. As a first example, we
 will see how linear approximations allow us to make approximate
 ``difficult'' computations.
+\end{example}
 
 
 
-%% It maybe useful to compute an approximation using the cube root of 27 instead. Then students can see the difference between their approximations and which is better.
+%%%%%% Aproximation of \sqrt[3]{50} number 1
 \begin{example}
 Use a linear approximation of $f(x) =\sqrt[3]{x}$ at $x=64$ to
 approximate $\sqrt[3]{50}$.
@@ -126,8 +130,27 @@ So our linear approximation is
 &= \frac{1}{\answer[given]{48}} (x-64) + 4\\
 &= \answer[given]{1/48}x + \answer[given]{8/3}.
 \end{align*}
+
+
+\textbf{Question. } Using the linear approximation just found (and the Desmos calculator below), 
+
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.000001]{3.70833333}.
+\]
+\begin{expandable}
+Hint: Remember to round to 6 decimal places.
+\end{expandable}
+
+
+\[
+\graph[panel]{}
+\]
+
+
+
+
+
 \begin{image}
-%\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             xmin=1,xmax=100,ymin=0,ymax=5,
@@ -145,12 +168,10 @@ So our linear approximation is
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(64,4)};  %% closed hole            
         \end{axis}
 \end{tikzpicture}
-%\caption{A linear approximation of $f(x) = \sqrt[3]{x}$ at $x=64$.}
-%\label{figure:la sqrt3x}
-%\end{marginfigure}
 \end{image}
 
 Now let's use our approximation and true value to find our approximation's error.
+
 
 Use the Desmos widget below to determine the error of your approximation for $\sqrt[3]{50}$, noting that $\sqrt[3]{50} = f(50)$.
 
@@ -158,17 +179,24 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 \graph[panel]{f(x) = x^{1/3}, l(x) = (1/48) x + (8/3)}
 \]
 
-
-The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
+\textbf{Question. } The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
 answer by $\answer[tolerance=0.000001]{0.024302}$ units.
 
-%Now we evaluate $\l(50) \approx 3.71$ and compare it to
-%$\sqrt[3]{50}\approx 3.68$.  From this we see that the linear
-%approximation, while perhaps inexact, is computationally \textbf{easier}
-%than computing the cube root.
+\begin{expandable}
+Hint: Note that $f(50)$ when plugged into Desmos will give $sqrt[3]{50}$.
+\begin{expandable}
+What will be $\l(50)$ give you in the Desmos calculator?
+\begin{expandable}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\begin{expandable}
+What does $f(50)-\l(50)$ give you? Is that what you want?
+\end{expandable}
+\end{expandable}
+\end{expandable}
+\end{expandable}
+
 \end{explanation}
 \end{example}
-
 
 With modern calculators and computing software it may not appear
 necessary to use linear approximations. In fact they are quite
@@ -181,10 +209,9 @@ accuracy.
 
 
 
-
 %% Approximation using cube root of 27 instead.
 \begin{example}
-Now use a linear approximation of $f(x) =\sqrt[3]{x}$ at ${\bf x=27}$ to
+Now use a linear approximation of $f(x) =\sqrt[3]{x}$ at $\underline{x=27}$ to
 approximate $\sqrt[3]{50}$.
 \begin{explanation}
 To start, write
@@ -198,14 +225,22 @@ m(x) &= \answer[given]{1/27}x + \answer[given]{2}.
 \end{align*}
 
 
+\textbf{Question. } Using the linear approximation just found (and the Desmos calculator below),
+\[
+\sqrt[3]{50} \approx \answer[tolerance=0.0000005]{3.851852}.
+\]
+\begin{expandable}
+Remember to round to 6 decimal places.
+\end{expandable}
 
-%\begin{align*}
-%m(x) &= \frac{1}{3\cdot 27^{2/3}} (x-27) + \answer[given]{3} \\
-%&= \frac{1}{\answer[given]{27}} (x-27) + 3\\
-%&= \answer[given]{1/27}x + \answer[given]{2}.
-%\end{align*}
+\[
+\graph[panel]{}
+\]
+
+
+
+
 \begin{image}
-%\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             xmin=1,xmax=100,ymin=0,ymax=5,
@@ -223,9 +258,6 @@ m(x) &= \answer[given]{1/27}x + \answer[given]{2}.
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(27,3)};  %% closed hole            
         \end{axis}
 \end{tikzpicture}
-%\caption{A linear approximation of $f(x) = \sqrt[3]{x}$ at $x=64$.}
-%\label{figure:la sqrt3x}
-%\end{marginfigure}
 \end{image}
 
 Now let's use our approximation and true value to find our approximation's error.
@@ -237,14 +269,28 @@ Use the Desmos widget below to determine the error of your approximation for $\s
 \]
 
 
-The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
+\textbf{Question. } The approximation is \wordChoice{\choice[correct]{above}\choice{below}} the true 
 answer by $\answer[tolerance=0.000001]{0.167820}$ units.
+
+\begin{expandable}
+Hint: Note that $f(50)$ when plugged into Desmos will give $sqrt[3]{50}$.
+\begin{expandable}
+What will be $m(50)$ give you in the Desmos calculator?
+\begin{expandable}
+How can you use the Desmos calculator to find the difference of these two numbers?
+\begin{expandable}
+What does $f(50)-m(50)$ give you? Is that what you want?
+\end{expandable}
+\end{expandable}
+\end{expandable}
+\end{expandable}
 
 \end{explanation}
 \end{example}
 
-Notice that we approximated $\sqrt[3]{50}$ using two different linear approximations of $\sqrt[3]{x}$ and we got two different approximations of $\sqrt[3]{50}$.
-
+Notice that we approximated $\sqrt[3]{50}$ using two different
+linear approximations of $\sqrt[3]{x}$ and hence got two different
+approximations of $\sqrt[3]{50}$.
 
 %%% Comparison of approximations
 \begin{question}
@@ -258,7 +304,6 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
 \end{multipleChoice}
 
 \begin{image}
-%\begin{marginfigure}
 \begin{tikzpicture}
 	\begin{axis}[
             xmin=20,xmax=70,ymin=2.5,ymax=4.5,
@@ -277,47 +322,19 @@ Compare your linear approximations when using $x=64$ and $x=27$. Which linear ap
           \addplot[color=penColor3,fill=penColor3,only marks,mark=*] coordinates{(50,3.68403149864)};  %% closed hole            
         \end{axis}
 \end{tikzpicture}
-%\caption{A linear approximation of $f(x) = \sqrt[3]{x}$ at $x=64$.}
-%\label{figure:la sqrt3x}
-%\end{marginfigure}
 \end{image}
 
-As a warning: not all approximations are over estimates! This just came about from this example.
+As a warning: not all approximations are over estimates! This just came about
+from this example. Some linear approximations are over-estimates. Some are
+under-estimates. Some vary for different points you are approximating at!
 \end{question}
-
-
-
-%%%% Finding the range of $x=a$ values such that the linear
-%%approximation will be so close for a particular value.
-%\begin{example}
-%Now we will determine what range of integers $a$ values we can use to ensure
-%that the linear approximation $g(x)$ of $f(x)=\sqrt[3]{x}$ 
-%at $x=a$ will be within a tolerance of $0.01$ of $\sqrt[3]{50}$
-%when approximating $\sqrt[3]{50}$.
-%
-%Recall that $g(x) = f'(a)(x-a) + f(a)$.
-%
-%We want to know what $a$ values for $\l(x)$ have the property that $|g(50) - \sqrt[3]{50}|<0.01$.
-%
-%Since $\sqrt[3]{50} \approx 3.684031$, we need to find for what $a$ values $g(50) = 3.694031$, and $g(50) = 3.674031$.
-%
-%\[]
-%\graph[xmin=48, xmax=52, ymin=3.55, ymax=3.85]{f\left(x\right)\ =\ x^{\frac{1}{3}}, g\left(x\right)\ =\ f'\left(a\right)\left(x-a\right)\ +\ f\left(a\right)\ , a=43, y\ =\ 3.694031,y\ =\ 3.674031}
-%\]
-%
-%
-%
-%
-%
-%
-%\end{example}
 
 
 
 
 
 %% Approximation for sine function
-\begin{example}%\label{exam:linear approximation of sine}
+\begin{example}
 Use a linear approximation of $f(x) =\sin(x)$ at $x=0$ to approximate
 $\sin(0.3)$.
 \begin{explanation}
@@ -339,9 +356,6 @@ so our linear approximation is
             xtick={-1.57, 0, 1.57},
             xticklabels={$-\pi/2$, $0$, $\pi/2$},
             ytick={-1,1},
-            %ticks=none,
-            %width=3in,
-            %height=2in,
             unit vector ratio*=1 1 1,
             xlabel=$x$, ylabel=$y$,
             every axis y label/.style={at=(current axis.above origin),anchor=south},
@@ -358,7 +372,7 @@ so our linear approximation is
 %\label{figure:la sin}
 %\end{marginfigure}
 \end{image}
-Hence a linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
+Hence the linear approximation for $\sin(x)$ at $x=0$ is $\l(x) = x$,
 and so $\l(0.3) = 0.3$.  Comparing this to $\sin(.3) \approx 0.295$,
 we see that the approximation is quite good. For this reason, it is common
 to approximate $\sin(x)$ with its linear approximation $\l(x) = x$
@@ -368,336 +382,7 @@ when $x$ is near zero.
 \end{example}
 
 
-%%% Approximating periodicity of a pendulum!
-\begin{example}%\label{exam:Periodicity of a pendulum}
-Consider a pendulum with ball $B$ with mass $m$ hanging from a string
-with length $L$ hanging from a block of woods at pivot point $P$.
-Below is a picture of the pendulum that is displaced with angle
-$\theta$ from equilibrium.
 
-%% Picture of pendulum 
-%Edited from http://tex.stackexchange.com/questions/219038
-%/tikz-draw-angle-with-label-between-lines
-\begin{center}
-\usetikzlibrary{calc,patterns,angles,quotes}
-\begin{tikzpicture}
-    \coordinate (origo) at (0,0);
-    \coordinate (pivot) at (1,5);
-
-    % draw axes
-    \fill[black] (origo) circle (0.05);
-    \node[below left=1pt of {(0,0)}] {Point $P$};
-    \draw[thick,gray,->] (origo) -- ++(4,0) node[black,right] {};
-    \draw[thick,dashed, gray,->] (origo) -- ++(0,-4) node (mary) [black,below] {};
-
-    % draw roof
-    \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
-    \draw[thick] ($ (origo) + (-1,0) $) -- ($ (origo) + (1,0) $);
-
-    \draw[thick] (origo) -- ++(300:3) coordinate (bob);
-    \fill (bob) circle (0.2);
-    \node[below left=5pt of {(1.5,-2.5)}] {$M$};
-
-    \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
-  \end{tikzpicture}
-\end{center}
-
-In this model when the mass is directly below the pivot point $P$
-(on the dashed line), the string is in equilibrium and doesn't move.
-
-Suppose we'd like to find out how long it takes this pendulum
-to swing back and forth (one period).
-
-\begin{explanation}
-To find the period of the pendulum, we need to understand how the pendulum moves.
-
-Note that the position of the pendulum is completely determined
-by the angle of displacement $\theta$. If we move the ball of the pendulum
-to a certain $\theta\neq 0$ and let go, the pendulum will swing back
-and forth. Therefore the angle $\theta$ is a function of time, $t$. 
-So how does this bad-boy move?
-
-Newton's second law of motion implies the following 
-relationship holds in this system:
-
-\[
--m g L \phantom{.} \sin(\theta) = m L^2 \phantom{.}\dfrac{d^2 \theta}{d t^2}
-\]
-where $g$ is earth's gravitational constant.
-
-Our goal is to solve this differential equation to find what the function
-$\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swing.
-
-Let's get to work. Manipulate the above equation so that '$0$'
-is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
-
-\[
-0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
-\]
-
-Note that $L,m,$ and $g$ are constant and greater than $0$, so we can
-divide the equality by any of these terms to get an equivalent statement.
-Manipulate the above equality so that the coefficient of $\dfrac{d^2 \theta}{d t^2}$
-is $1$.
-
-\[
-0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{\answer[given]{g}}{\answer[given]{L}} \phantom{.} \sin(\theta)
-\]
-
-\begin{question}
-Does the above relationship depend on the length of the string?
-\begin{multipleChoice}
-\choice[correct]{Yes}
-\choice{No}
-\end{multipleChoice}
-\begin{feedback}
-There's no way to eliminate $L$ from the equation, so the solution
-to the differential equation depends on the length of the string $L$.
-\end{feedback}
-\end{question}
-
-\begin{question}
-Does the above relationship depend on the gravitational constant?
-\begin{multipleChoice}
-\choice[correct]{Yes}
-\choice{No}
-\end{multipleChoice}
-\begin{feedback}
-There's no way to eliminate $g$ from the equation, so the solution
-to the differential equation depends on earth's gravitational
-constant $g$.
-\end{feedback}
-\end{question}
-
-\begin{question}
-Does the above relationship depend on the mass of ball?
-\begin{multipleChoice}
-\choice{Yes}
-\choice[correct]{No}
-\end{multipleChoice}
-\begin{feedback}
-By dividing by $m$, we were able to eliminate the mass $m$ from
-the equation. Therefore the solution to the differential equation
-(the position/path of the ball) doesn't depend
-on the mass of the ball. Even though $m$ was in the initial equality,
-it isn't relevant to the solution. Holy smokes!
-\end{feedback}
-\end{question}
-
-Now let's try to solve this differential equation!
-
-\[
-0 = \dfrac{d^2 \theta}{d t^2}  + \dfrac{g}{L} \sin(\theta)
-\]
-
-We will utilize the fact that $\theta$, the position of the ball,
-is a function of time. We are trying to solve the differential
-equation above so that we can find the period of the swing of the pendulum.
-
-Manipulate the above equation to so that $\dfrac{d^2 \theta}{d t^2}$ is in terms of $\theta$.
-
-\[
-\dfrac{d^2 \theta}{d t^2}  = \answer[given]{-g\sin(\theta)/L}
-\]
-
-The differential equation is too tough for us to solve at the moment,
-but we can solve something similar.
-
-Let's solve this differential equation for small displacements
-of $\theta$. We will replace '$\sin(\theta)$ with a linear approximation
-of $\sin(\theta)$.
-
-\begin{question}
-If we want to solve this differential displacements from equilibrium, at value of $\theta$ should we approximate $\sin(\theta)$?
-
-\begin{prompt}
-We find a linear approximation of $\sin(\theta)$ at $\theta = \answer[given]{0}$.
-\end{prompt}
-\end{question}
-
-\begin{question}
-What is the linear approximation of $\sin(\theta)$ at the above $\theta$ value?
-
-\begin{prompt}
-\[
-\sin(\theta) \approx \answer[given]{\theta}
-\]
-\end{prompt}
-
-\begin{hint}
-Remember $\theta$ is the variable, not $x$.
-\end{hint}
-\begin{hint}
-You've already found this early this earlier in this lab.
-\end{hint}
-\end{question}
-
-This is actually a surprisingly good approximation for
-$|\theta|\leq \frac{\pi}{12} = 15^\circ$! In this context, "small" angles
-are angles that deviate no more that $15^\circ$ from equilibrium, FYI.
-
-Therefore we are trying to find a solution to
-
-\[
-\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta
-\]
-
-or for the constant $C=\frac{g}{L}$,
-
-\[
-\dfrac{d^2 \theta}{d t^2}  = -C\theta.
-\]
-
-Another way to phrase this is that $\theta$ is a functions whose
-second derivative is $-1$ times a scalar $C$ of the original function.
-
-\begin{question}
-Do you know any types of functions whose \emph{second} derivative
-is $-1$ times itself (disregarding the $C$)? Which of the following have at least one function that has this property.
-
-\begin{selectAll}
-\choice[correct]{Polynomials of degree $0$ (Constant functions)}
-\choice{Polynomials of degree $1$ or bigger}
-\choice[correct]{Trigonometric functions}
-\end{selectAll}
-\end{question}
-
-\begin{question}
-Which polynomial $f(t)$ has the property that it's second
-derivative is $-1$ times itself i.e. if
-$\theta=f(t)$, then $\dfrac{d^2 \theta}{d t^2} = f''(t) = -f(t)$?
-
-\begin{prompt}
-The polynomial function $f(t) = \answer[given]{0}$ has the property that $f''(t) = -f(t)$.
-\end{prompt}
-\begin{hint}
-Don't over think it.
-\end{hint}
-\begin{hint}
-It is polynomial in the variable $t$.
-\end{hint}
-\begin{hint}
-It is actually a constant function.
-\end{hint}
-\end{question}
-
-This is our equilibrium solution! This function has $\theta=0$ at $t=0$. In other
-words, this is our solution when we put the ball directly below the point
-that the string is hanging from. This is no surprise though since this
-is the equilibrium. What we \emph{really} want is to find out what happens
-when we place the ball somewhere where the ball actually swings.
-
-\begin{question}
-Which of the following trigonometric functions have this property
-($\dfrac{d^2 \theta}{d t^2} = -\theta$)? Select all such functions.
-\begin{selectAll}
-\choice[correct]{$\sin(t)$}
-\choice[correct]{$\cos(t)$}
-\choice{$\tan(t)$}
-\choice{$\csc(t)$}
-\choice{$\sec(t)$}
-\choice{$\cot(t)$}
-\end{selectAll}
-\end{question}
-
-\begin{question}
-Since we are simulating the motion of the pendulum when letting go of the pendulum from
-a stand still, which of the functions you picked above would accurately simulate this situation?
-\begin{selectAll}
-\choice{$\sin(t)$}
-\choice[correct]{$\cos(t)$}
-\choice{$\tan(t)$}
-\choice{$\csc(t)$}
-\choice{$\csc(t)$}
-\choice{$\csc(t)$}
-\end{selectAll}
-\begin{hint}
-We want that the pendulum is not moving at $t=0$.
-\end{hint}
-\begin{hint}
-We want a function $f(t)$ such that $f'(t) = 0$ at $t=0$.
-\end{hint}
-\end{question}
-
-We're almost there! We know what the function generally looks like, but we
-need to check the fine details to make sure we answer the question we set out to answer.
-
-We want to solve the differential equation
-
-\[
-\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta
-\]
-
-or for the constant $C=\frac{g}{L}$,
-
-\[
-\dfrac{d^2 \theta}{d t^2}  = -C\theta.
-\]
-
-For $\theta = \cos(ax+b)$
-
-\begin{align*}
-    \dfrac{d^2}{d t^2}(\theta) &= \dfrac{d^2}{d t^2}\Big(\cos(a x + b)\Big)\\
-    &= \dfrac{d}{d t} \Big( \answer[given]{- a \sin(a x+b)}\Big)\\
-    &= \answer[given]{-a^2 \cos(a x+b)}\\
-    &= -a^2 \theta 
-\end{align*}
-
-\begin{question}
-So if we are looking for a solution to $\dfrac{d^2 \theta}{d t^2}  = -\dfrac{g}{L} \theta$,
-then solutions to this differential equation is $\theta = \cos(ax+b)$ where
-
-\begin{prompt}
-$b = \answer[given]{0}$
-\end{prompt}
-
-and 
-
-\begin{prompt}
-$a^2 = \answer[given]{g/L}$.
-\end{prompt}
-
-Assuming $a>0$, then 
-
-\begin{prompt}
-$a = \dfrac{\answer[given]{\sqrt{g}}}{\answer[given]{\sqrt{L}}}$
-\end{prompt}
-\end{question}
-
-\begin{question}
-Given your solution to the differential equation above, what is the period of a ball with mass $m$ on a string with length $L$ which is displaced at "small" angles?
-
-\[
-(\answer[given]{2\pi})\sqrt{\Big(\answer[given]{L/g}\Big)}
-\]
-\begin{hint}
-For $A\sin(ax+b)$ or $A\cos(ax+b)$, the period of the function is $\dfrac{2\pi}{a}$.
-\end{hint}
-\end{question}
-
-If the ball starts at an initial angle of displacement $\theta_0$
-(where $|\theta_0|<\frac{\pi}{12}= 15^\circ$), we can describe
-the position of the ball at any given time by
-
-\[
-\theta(t) = \theta_0 \cos\Big(\sqrt{\frac{g}{L}} t\Big).
-\]
-Pretty neat, huh?
-
-\begin{question}
-Given a ball with mass $0.6$ kilograms hanging from a string with length $7$ meters, what is the period of a pendulum swing when the swing doesn't deviate more than $\frac{\pi}{12}$ radians from a free hang (where gravitational constant $9.8$ meters per second)?
-
-\begin{prompt}
-The period is approximately $\answer[tolerance=0.01]{2*3.1415*0.84515}$.
-\end{prompt}
-\end{question}
-
-
-
-
-%http://www.acs.psu.edu/drussell/Demos/Pendulum/Pendula.html
-\end{explanation}
-\end{example}
 
 
 \end{document}
