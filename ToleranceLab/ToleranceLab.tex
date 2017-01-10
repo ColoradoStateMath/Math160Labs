@@ -84,17 +84,100 @@ where $T$ is the temperature in degrees Celsius and $w$ is the power input in wa
   For problems 1 and 2 you had to find an interval of input values that would satisfy an arbitrary interval of output values (if the word ``arbitrary'' is throwing you off, chat with your instructor). Can this be done for any function? If yes, explain why. If not, provide a graph or function of a counter example and explain why it is a counter example.
 \end{problem}
 
-%%PROBLEM 4 - SINE GRAPH%%
+%%PROBLEM 4 - cos (pi/x)%%
+\begin{problem}{\textbf{\textit{An Investigation with tables. Be careful; tables can be misleading! }}}
+Use $\displaystyle f(x)=\cos\left(\frac{\pi}{x}\right)$ to fill in the following three tables.
+Use the Desmos calculator widget below to compute your answers. Report any non-terminating values to 8 decimal places.
+
+\[
+\graph[panel]{cos(pi/-1)}
+\]
+
+\begin{tabular}{|c|c|}
+
+\hline
+		$x$ & $\cos\left(\frac{\pi}{x}\right)$\\
+		
+        $0.1$ & $\answer{1}$\\
+		
+		$0.01$ & $\answer{1}$\\
+		
+		$0.001$ & $\answer{1}$\\
+		
+		$0.0001$ & $\answer{1}$\\
+		
+		$0.00001$ & $\answer{1}$ \\
+		
+		$0.000001$ & $\answer{1}$ \\
+
+		
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|c|c|}
+
+\hline
+		$x$ & $\cos\left(\frac{\pi}{x}\right)$\\
+		
+        $0.15$ & $\answer{-0.5}$\\
+		
+		$0.015$ & $\answer{-0.5}$\\
+		
+		$0.0015$ & $\answer{-0.5}$\\
+		
+		$0.00015$ & $\answer{-0.5}$\\
+		
+		$0.000015$ & $\answer{-0.5}$ \\
+		
+		$0.0000015$ & $\answer{-0.5}$ \\
+
+		
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{|c|c|}
+
+\hline
+		$x$ & $\cos\left(\frac{\pi}{x}\right)$\\
+		
+        $-0.2$ & $\answer{-1}$\\
+		
+		$-0.03$ & $\answer{-0.5}$\\
+		
+		$-0.004$ & $\answer{1}$\\
+		
+		$-0.0005$ & $\answer{1}$\\
+		
+		$-0.00006$ & $\answer{-0.5}$ \\
+		
+		$-0.000007$ & $\answer[tolerance=0.0000001]{-0.9009688673}$ \\
+
+		
+\end{tabular}
+
+
+
+    %%Part 4a
+    \begin{problem}{\textbf{\#4a}}
+    From the above results, what do you conclude about $\displaystyle\lim_{x\rightarrow 0}\cos\left(\frac{\pi}{x}\right)$? Explain in terms of what it means for a function to have a limit (or not to have a limit) how the values in the tables support your conclusion.
+    \end{problem}
+    
+\end{problem}
+
+
+%%PROBLEM 5 - sin(1/x)%%
 \begin{problem}
 Use $\displaystyle f(x)=\sin\left(\frac{1}{x}\right)$ to answer the following.
-Let's make a table of values. Use the Desmos calculator widget below to compute your answers to \textbf{\underline{8 decimal places}}
+Let's make a table of values. Use the Desmos calculator widget below to compute your answers to \textbf{\underline{8 decimal places}}.
 
 \[
 \graph[panel]{sin(1/-1)}
 \]
 
-%%Part 4a
-\begin{problem}{\textbf{\#4a}}
+%%Part 5a
+\begin{problem}{\textbf{\#5a}}
 
 \begin{tabular}{|c|c|}
 
@@ -138,15 +221,10 @@ Let's make a table of values. Use the Desmos calculator widget below to compute 
 \end{tabular}
 \end{problem}
 
-%%Part 4b
-\begin{problem}{\textbf{\#4b}}
-\textbf{Your answer to this question should be typed or written in a separate document and labeled as Problem 4b. You can add to the document containing your other written problem responses.}
 
-   For problems 1 and 2 you had to find an interval of input values that would satisfy a particular interval of output values. Can this be done for any function? If yes, explain why. If not, provide a graph or function of a counter example and explain why it is a counter example.
-\end{problem}
 
-%%Part 4c
-\begin{problem}{\textbf{\#4c}}
+%%Part 5b
+\begin{problem}{\textbf{\#5b}}
 
 Plot the graph of $f(x)=\sin\left(\frac{1}{x}\right)$ on the $x$-window $[-0.5,0.5]$. You can use the Desmos widget to generate graphs. 
 
@@ -159,8 +237,8 @@ Click on the wrench icon in the Desmos widget to adjust the values on the axes.
 
 \end{problem}
 
-%%Part 4d
-\begin{problem}{\textbf{\#4d}}
+%%Part 5c
+\begin{problem}{\textbf{\#5c}}
 
 Plot the graph of $f(x)=\sin\left(\frac{1}{x}\right)$ on the $x$-window $[-0.1,0.1]$. You can use the Desmos widget to generate graphs. 
 
