@@ -14,7 +14,7 @@ around solving problems!
 
 Here is an example problem.  Play around with it, get it wrong, try
 the hints out.  Don't be afraid to fail: \textbf{getting an answer wrong never
-  hurts you.}
+  hurts you, as long you work until you figure the problem out.}
 
 
 \begin{problem}
@@ -37,10 +37,19 @@ the hints out.  Don't be afraid to fail: \textbf{getting an answer wrong never
     \choice{Don't pick me.}
     \choice[correct]{Pick me!}
     \choice[correct]{Pick me too!}
-    \choice[correct]{I'm a correct choice too.}
+    \choice[correct]{I'm not a correct answer.}
   \end{selectAll}
+  \begin{feedback}
+  There is another correct answer! Click on the 'Reveal Hint' button to find out what the other answer is.
+  \end{feedback}
   \begin{hint}
-    Click on the choices ``Pick me!'' ``Pick me too!'' and ``I'm a correct choice too.''
+    One of the answers is lying! Click the 'Reveal Hint' button again to see another hint.
+    \begin{hint}
+    Click on the choices ``Pick me!'' ``Pick me too!'' and ``I'm not a correct answer.''
+        \begin{hint}
+        There are no more hints.
+        \end{hint}
+    \end{hint}
   \end{hint}
 \end{problem}
 
@@ -131,17 +140,9 @@ problems from the different answer types we support:
 
 
 \begin{problem}
-  $ \varphi = \answer{\varphi}$
+  $ \theta = \answer{\theta}$
   \begin{hint}
-    Type $\verb|phi|$
-  \end{hint}
-\end{problem}
-
-
-\begin{problem}
-  $ \rho = \answer{\rho}$
-  \begin{hint}
-    Type $\verb|rho|$
+    Type $\verb|theta|$
   \end{hint}
 \end{problem}
 
