@@ -17,17 +17,34 @@
 
 \section{Math 160 Lab 2 \\ Linear Approximation}
 
+%% Have to edit the date here.
 \begin{abstract}
-This is Lab 2 for Math 160 - Due Wednesday, 12 October, 2016. This lab will cover tolerance and provide an introduction to the idea of limits. Unless stated otherwise, compute all values to $6$ decimal places.
+This is Lab 2 for Math 160 - Due Wednesday, March 16, 2017 (NEED TO EDIT). This lab will cover ``linear approximations'': what are they, how do you compute them, and how are they useful. For example, we use linear approximations to estimate the value of (complicated) functions at a given point.\\
 
-We use a method called ``linear approximation'' to estimate the value of (complicated) functions at a given point.
+Unless stated otherwise, compute all values to $6$ decimal places.
 \end{abstract}
 
 \maketitle
 
 \bigskip
 
+
+%% Start with multiple choice picture question about what SHOULD a linear approximation look like?
+
+
+
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
+
+Let's explore what properties we would want from this approximation.
+% Want the approximation to go through the point
+% Want the approximation's slope to have the slope of the tangent line at $x=3$.
+
+\[
+\graph[panel]{f(x) = (x-2)^2 + 4, (3,f(3)), m=0, b=0, y=mx+b}
+\]
+
+
+
 
 Given a line with slope $m$ through the point $(a, b)$, what is the point-slope form of the line?
 \[
@@ -48,6 +65,9 @@ What point should an approximation of $f(x)$ at $x=3$ go through?
 \begin{hint}
 Should the linear approximation go through the point at which it is approximating?
 \end{hint}
+\begin{hint}
+Remember a point is an $(x,y)$ pair.
+\end{hint}
 \end{problem}
 
 \begin{problem}
@@ -57,6 +77,13 @@ y = \answer[given]{2}x + \answer[given]{-1}
 \]
 \begin{hint}
 Think $y=mx+b$
+\end{hint}
+\begin{hint}
+What should the slope of the line be? (what is $m$?)
+\end{hint}
+\begin{hint}
+It may be helpful to use point slope form first ($y=m(x-a) + b$) first,
+and then convert into slope intercept form ($y=mx+b$).
 \end{hint}
 
 \begin{feedback}
