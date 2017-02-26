@@ -21,11 +21,9 @@
 \begin{abstract}
 This is Lab 2 for Math 160 - Due Wednesday, March 8, 2017 at 5:00PM MST.
 This lab will cover ``linear approximations'': what are they,
-how do you compute them, and how are they useful. For example,
-we use linear approximations to estimate the value of (complicated)
-functions at a given point.\\
+how do you compute them, and how are they useful. \\
 
-Unless stated otherwise, compute all values to $6$ decimal places.
+Unless stated otherwise, compute all values to $6$ decimal places in this lab.
 \end{abstract}
 
 
@@ -35,12 +33,12 @@ Unless stated otherwise, compute all values to $6$ decimal places.
 
 
 %% Start with multiple choice picture question about what SHOULD a linear approximation look like?
-The goal of this section is to explore and understand linear
+The goal of this section of the lab is to explore and understand linear
 approximations and what they {\it should} be. 
 
-{\bf Disclaimer}
+\textbf{Disclaimer}:
 
-Most of the examples that were will be doing in the following sections
+Most of the examples that we will be doing in the following sections
 are familiar functions that you may have dealt with before. 
 When asked to approximate a value of a function at a given point, 
 we will have a explicit function which we can evaluate the 
@@ -58,6 +56,9 @@ on familiar functions. While they aren't necessary in most of these
 cases, it is worth understanding how to do.\\
 
 \hrule
+\bigskip
+
+Now \dots to the material.\\
 \medskip
 
 Suppose you want to approximate the function $f(x) = (x-2)^2  + 4$ at $x=3$.
@@ -66,9 +67,14 @@ Let's explore what properties we would want from this approximation.\\
 
 
 {\bf Objective 1}: Play with the $m$ (slope) and $b$ (y-intercept) sliders to find
-a 'good' linear approximation of $f(x)$ at $x=3$.
-{\bf Hint}: In the desmos window below, go to an empty box and type `$(3,f(3))$'. 
-This is make a `dot' at the point on $f(x)$ that we want to approximate at.
+a 'good' linear approximation of $f(x)$ at $x=3$. This is not a question
+that can be correct or incorrect; it is meant to build your intuition
+on linear approximations.\\
+
+\textbf{Hint}: In the desmos window below, go to an empty box in the 
+desmos grapher and type `$(3,f(3))$'. This will make a `dot' at the point
+on $f(x)$ that we want to approximate at. You may also want center
+the point $(3, f(3))$ and zoom in to get an even better approximation.
 \[
 \graph[panel]{f(x) = (x-2)^2 + 4, m=0, b=0, A=mx+b}
 \]
@@ -76,7 +82,7 @@ This is make a `dot' at the point on $f(x)$ that we want to approximate at.
 \begin{question}
 Given the function $f(x)$ (in black), whose graph is below, 
 what is the error of each of these various approximations
-(Lines A, B, C, and D) of $f(x)$ at $x=3$?
+(Lines {\color{orange}A}, {\color{red}B}, {\color{blue}C }, and {\color{green}D} ) of $f(x)$ at $x=3$?
 
 %%%% Graph%%%%%
 \begin{tikzpicture}
@@ -143,23 +149,26 @@ As approximations of the curve $f(x)$ at $x=3$,\\
 \end{itemize}
 
 \begin{hint}
-The error from an approximation is the distance between the true solution and the approximation
+The `error of an approximation' is the distance between the true solution
+and the approximation. (More Hints Available)
 \end{hint}
 \begin{hint}
-If you are approximating $f(x)$ at $x=3$, then the `true solution' is the true value of $f(x)$ at $x=3$, AKA $f(3)$.
+If you are approximating $f(x)$ at $x=3$, then the `true solution' is the
+true value of $f(x)$ at $x=3$, AKA $f(3)$. (More Hints Available)
 \end{hint}
 \begin{hint}
-The approximation of function $f(x)$ at $x=a$ using a line $y=mx+b$ is $ma+b$.
+The approximation of the function $f(x)$ at $x=a$ using a line 
+$y=mx+b$ is $ma+b$.(More Hints Available)
 \end{hint}
 \begin{hint}
 Error shouldn't be negative. If you are finding the difference
 between two numbers and the difference is negative, then the absolute
-value of the difference would give the distance between the points.
+value of the difference would give the distance between the numbers.
 \end{hint}
 \end{question}
 
 \begin{question}
-Given the errors you found for $f(x)$ at $x=3$ using  each line (A,B,C, and D), which line(s) has the least error at $x=3$?
+Given the errors you found for $f(x)$ at $x=3$ using  each line (A,B,C, and D), which line(s) has (have) the least error at $x=3$?
 \begin{selectAll}
 \choice{A}
 \choice[correct]{B}
@@ -173,9 +182,9 @@ Given the errors you found for $f(x)$ at $x=3$ using  each line (A,B,C, and D), 
 This establishes an important property of a linear approximation
 of a function at a given point: {\it the best linear approximation
 should agree with the point at which you are approximating.}
-In other words, if you are approximating a function $f(x)$ with a
-line $\l(x)$ at $x=a$, then the line should be such that $\l(a)=f(a)$:
-the output of the line is the same as the function's output at the $x$-value you are approximating from.\\
+In other words, if you are approximating a function $f(x)$ at $x=a$ with a
+line $\l(x)$, then the line should be such that $\l(a)=f(a)$;
+the output of the line is the same as the function's output at the $x$-value you are approximating at.\\
 
 %%% Justifying the slope of the approximation
 \underline{Question}: What is the difference between two lines that both
@@ -234,54 +243,45 @@ Consider the graph of $f(x)= (x-2)^2 + 4$ (in black), and three other linear app
 Let's ask another question: What are the errors of the approximations `near' $x=3$? \\
 
 %%% Approx at x=2.9
-As approximations of the curve $f(x)$ at {\bf $x=2.9$},
+Given the new graph above, then as approximations of the curve $f(x)$ at {\bf $x=2.9$},
 \begin{itemize}
 \item the error of Line B (given by $y=5$, in red) is $\answer{0.19}$
 \item the error of Line C (given by $y=2x-1$, in blue) is $\answer{0.01}$
 \item the error of Line G (given by $y=-0.5*x + 6.5$, in green) is $\answer{0.24}$
 \end{itemize}
 
-{\bf Hint}: Use the desmos calculator below to help with the computations.
-Click the `Hint' button to learn how to evaluate the functions using
+\textbf{Hint}: Though you can do the computations by hand, use the
+desmos calculator below to help with the computations. 
+Note that that $f(2.9)$ is given for you. Alter this to get what you're looking for!\\
+Click the `Reveal Hint' button to learn how to evaluate the functions using
 the desmos calculator.\\
 \begin{hint}
-Note that typing `$B(3)$' into a blank entry on the desmos calculator
-evaluates the line $B$ at $x=3$.
+Typing `$B(3)$' into a blank entry on the desmos calculator
+evaluates the line $B$ at $x=3$. (More Hints Available)
 \end{hint}
 \begin{hint}
-`$|f(4.1) - G(4.1)|$' would compute the error of the approximation
-from line $G$ for the function $f(x)$ at $4.1$.
+Typing `$|f(4.1) - G(4.1)|$' would compute the error of the approximation
+of $f(x)$ at $x=4.1$ using the line $G$.
 \end{hint}
 \[
 \graph[panel]{f(x) = (x - 2)^2 + 4, B(x) = 0x + 5, C(x) = 2x -1, G(x) = -0.5x + 6.5, f(2.9)}
 \]
 
-
+\medskip
 %%%%% Approx at x=3.1
+
+Use the desmos calculator above to answer the following questions.
+
 As approximations of the curve $f(x)$ at {\bf $x=3.1$},\\
 \begin{itemize}
 \item the error of Line B (given by $y=5$, in red) is $\answer{0.21}$\\
 \item the error of Line C (given by $y=2x-1$, in blue) is $\answer{0.01}$\\
 \item the error of Line G (given by $y=-0.5*x + 6.5$, in green) is $\answer{0.26}$\\
 \end{itemize}
-\[
-\graph[panel]{f(x) = (x-2)^2 + 4, B(x) = 0*x + 5, C(x) = 2*x -1, G(x) = -0.5*x + 6.5, |f(3.1) - B(3.1)|}
-\]
-{\bf Hint}: Use the desmos calculator below to help with the computations.
-Click the `Hint' button to learn how to evaluate the functions using
-the desmos calculator.\\
-\begin{hint}
-Note that typing `$B(3)$' into a blank entry on the desmos calculator
-evaluates the line $B$ at $x=3$.
-\end{hint}
-\begin{hint}
-`$|f(4.1) - G(4.1)|$' would compute the error of the approximation
-from line $G$ for the function $f(x)$ at $4.1$.
-\end{hint}
 \end{question}
 
 \begin{question}
-Given the errors you found for $f(x)$ at $x=2.9$ and $x=3.1$ using the lines B,C, and G, which line(s) has the least error `near' $x=3$?
+Given the errors you found for $f(x)$ at $x=2.9$ and $x=3.1$ using the lines B,C, and G, which line(s) has (have) the least error `near' $x=3$?
 \begin{selectAll}
 \choice{B}
 \choice[correct]{C}
@@ -289,9 +289,9 @@ Given the errors you found for $f(x)$ at $x=2.9$ and $x=3.1$ using the lines B,C
 \end{selectAll}
 \end{question}
 
-{\bf Warning}: `Near' is not a well-defined notion. $2.99$ is closer than $2.9$
-to $3$ than, and
-$2.999$ is even closer than $2.99$. We are merely trying to get 
+\textbf{Warning}: `Near' is not a well-defined notion. $2.99$ is closer than $2.9$
+to $3$, and
+$2.999$ is even closer to $3$ than $2.99$. We are merely trying to get 
 an idea for what is happening graphically: if we mentally `zoom' in 
 near the point $(3,5)$, we want our linear approximation to
 be as close as possible to the line we are approximating, in this case $f(x) = (x-2)^2 + 4$.\\
@@ -299,17 +299,18 @@ be as close as possible to the line we are approximating, in this case $f(x) = (
 \medskip
 
 Now what's so special about the linear approximation above? 
-What is the slope of that line? It looks almost like the best linear
-approximation of the $f(x)$ at $x=3$. This is no coincidence! 
+What is the slope of that line? It looks like the slope of best linear
+approximation of the $f(x)$ at $x=3$ is $f'(3)$. This is no coincidence! 
 The best linear approximation of a differential function at $x=a$
-is precisely the tangent line to the curve at $x=a$! We have just found our last important property of our {\it best} linear approximation at $x=a$: The slope of the line is the slope of the tangent line at $x=a$, i.e. the derivative evaluated at $x=a$!
+is precisely the tangent line to the curve at $x=a$! We have just found our last important property of our \textit{best} linear approximation at $x=a$: The slope of the best linear approximation of a function $f(x)$ at $x=a$ is the slope of the line tangent to $f(x)$ at $x=a$, i.e. the derivative of evaluated at $x=a$ ($f'(a)$)!\\
+\medskip
 
 
-Given a function, a \textit{linear approximation} (at $x=x_0$) is a fancy phrase
+Given a function, a \textit{linear approximation} (at $x=a$) is a fancy phrase
 for something you already know:
 \begin{center}
 \begin{quote}
-  \textbf{The line tangent to the function (at $x=x_0$).}
+  \textbf{The line tangent to the function (at $x=a$).}
 \end{quote}
 \end{center}
 
@@ -340,7 +341,7 @@ hit `-' (zoom out) in order to see the linear approximations for large $a$ value
 \graph[panel]{a=1, f(x) = 1/8x^3 + (3/8)x^2 -3/4 - 2, t(x) = f'(a)(x-a)+ f(a)}
 \]
 
-Notice how the linear approximation (the purple line) hugs
+Notice how the linear approximation (the purple line) tangentially hugs
 $f(x)$ (the green line) at the $x=a$ value!
 \end{example}
 
