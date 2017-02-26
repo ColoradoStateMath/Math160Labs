@@ -21,21 +21,19 @@
 \begin{abstract}
 This is Lab 2 for Math 160 - Due Wednesday, March 8, 2017 at 5:00PM MST.
 This lab will cover ``linear approximations'': what are they,
-how do you compute them, and how are they useful. For example,
-we use linear approximations to estimate the value of (complicated)
-functions at a given point.\\
+how do you compute them, and how are they useful.\\
 
-Unless stated otherwise, compute all values to $6$ decimal places.
+Throughout this lab unless stated otherwise, compute all values to $6$ decimal places.
 \end{abstract}
 
 \maketitle
 
 
-A linear approximation of $f$ is a ``good'' approximation as long as
-$x$ is ``not too far'' from $a$.
-If one ``zooms in'' on $f$ at $x=a$ sufficiently, then $f$ and the linear
+A linear approximation of $f$ will be a ``good'' approximation for values of
+$x$ that are ``not too far'' from $a$.
+If one mentally ``zooms in'' on $f$ at $x=a$ sufficiently, then $f$ and the linear
 approximation are nearly indistinguishable. As a first example, we
-will see how linear approximations allow us to make approximate
+will see how linear approximations allow us to approximate
 ``difficult'' computations.
 
 
@@ -58,19 +56,22 @@ So our linear approximation is
 
 
 
-\[
-\graph[panel]{}
-\]
-
-
-\textbf{Question. } Using the linear approximation just found (and the Desmos calculator above), 
+\textbf{Question. } Using the linear approximation just found (and
+the Desmos calculator below),
 
 \[
 \sqrt[3]{50} \approx \answer[tolerance=0.000001]{3.70833333}.
 \]
-\begin{expandable}
-Hint: Remember to round to 6 decimal places.
-\end{expandable}
+
+\smallskip
+\textbf{Hint}: You may want to change $m$ and $b$ to align with the
+linear approximation you found above. Remember to round to 6 decimal places.
+
+
+\[
+\graph[panel]{t(x)=mx+b}
+\]
+
 
 
 
