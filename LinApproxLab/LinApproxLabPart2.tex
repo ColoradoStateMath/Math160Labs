@@ -73,7 +73,7 @@ Suppose we'd like to find out how long it takes this pendulum
 to swing back and forth (one period).
 
 \begin{explanation}
-First of all to find the period of the pendulum, we need to understand
+First of all, to find the period of the pendulum, we need to understand
 how the pendulum moves. Note that the position of the pendulum is completely determined
 by the angle of displacement $\theta$ (Assuming that the string is always tight).
 If we move the ball of the pendulum to a certain $\theta\neq 0$ and let go,
@@ -92,11 +92,15 @@ Our goal is to solve this differential equation to find what the function
 $\theta$ is. Once we find $\theta$, we can find the period of the pendulum's swing.
 
 Let's get to work. Manipulate the above equation so that `$0$'
-is on one side and the $\dfrac{d^2 \theta}{d t^2}$ term is positive.
+is on one side (the left side) and the $\dfrac{d^2 \theta}{d t^2}$ term
+is positive.
 
 \[
-0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}
+0 = \answer[given]{m L^2} \dfrac{d^2 \theta}{d t^2}  + \answer[given]{m g L \sin(\theta)}\\
 \]
+
+\textbf{Hint}: Remember that in Ximera, you type `$\theta$' by typing 'theta'.\\
+
 
 Note that $L,m,$ and $g$ are constant and greater than $0$, so we can
 divide the equality by any of these terms to get an equivalent statement.
@@ -190,11 +194,12 @@ We find a linear approximation of $\sin(\theta)$ at $\theta = \answer[given]{0}$
 \sin(\theta) \approx \answer[given]{\theta}
 \]
 
-\begin{expandable}
-Hint: Remember $\theta$ is the variable, not $t$.
+
+Hint: Remember $\theta$ is the variable, not $t$. (Click the blue arrow to
+the right for another hint)
+
 \begin{expandable}
 You've already found this early this earlier in this lab.
-\end{expandable}
 \end{expandable}
 
 
@@ -309,6 +314,7 @@ For $\theta = \cos(at+b)$
 
 \begin{align*}
     \dfrac{d^2}{d t^2}(\theta) &= \dfrac{d^2}{d t^2}\Big(\cos(a t + b)\Big)\\
+    &= \dfrac{d}{d t} \Big( \dfrac{d}{dt}\Big(\cos(a t + b) \Big) \Big)\\
     &= \dfrac{d}{d t} \Big( \answer[given]{- a \sin(a t+b)}\Big)\\
     &= \answer[given]{-a^2 \cos(a t+b)}\\
     &= -a^2 \theta 
@@ -331,7 +337,7 @@ a^2 = \answer[given]{g/L}.
 Assuming $a>0$, then 
 
 \[
-a = \dfrac{\answer[given]{\sqrt{g}}}{\answer[given]{\sqrt{L}}}
+a = \sqrt{\dfrac{\answer[given]{g}}{\answer[given]{L}}}
 \]
 
 
