@@ -40,30 +40,24 @@ and are the reason why in physics, sometimes you say $\sin(x)\approx x$.
 
 \textbf{Disclaimer on this lab}:
 
-Most of the examples that we will be doing in the following sections
-are familiar functions that you may have dealt with before. 
-When asked to approximate a value of a function at a given point, 
-we will have an explicit function which we can evaluate directly; there
-is no need to approximate. \\
+In this lab you will be approximating function values using a technique
+called linear approximation.  Most of the examples discussed in this
+lab use familiar functions.  Although we may be able to evaluate the function
+directly and there is no need to approximate, we will use these examples
+to learn how to find linear approximations.\\
 
-In biological systems, however, the function you are trying to evaluate
-is often not known; you only know the way the system changes 
-(i.e. the derivative of the desired function) and one initial condition
-(i.e. the output of the desired function at one $x$-value). If you want
-to find the function at different value than the one given,
-one may need to approximate the function value.\\
 
-The main idea of solving such a problem is to create a 
-linear approximation of the function at the point that you know. From here,
-one can evaluate the linear approximation at the desired point to get an
-approximation of what the true function value is at the desired point. 
-An even better method would be to approximate near the point given that
-is closer to the desired $x$-value. Then you can make a linear approximation
-where at your closer value, approximate an even closer value using a linear
-approximation, until to reach you desired point. In these cases, linear
-approximation is a vital tool, so we will build our intuition for linear
-approximations on familiar functions. While they aren't necessary in most
-of these cases, it is worth understanding how to do.\\
+In biology systems, the function you are trying to evaluate is often
+not known; you only know the way the system changes (i.e. the derivative
+of the desired function) and one initial condition (i.e. the output of the
+desired function at one x-value). If you want to find the function at a different
+value than the one given, you may need to approximate the function value.\\
+
+The main idea of solving such a problem is to create a linear approximation
+of the function at a point you know.  From there, you can use the linear
+approximation to estimate function values for points nearby. Linear
+approximation is a vital tool, so we will build our intuition for
+linear approximations on familiar functions. \\
 
 \hrule
 \bigskip
@@ -274,7 +268,7 @@ Typing `$|f(4.1) - G(4.1)|$' would compute the error of the approximation
 of $f(x)$ at $x=4.1$ using the line $G$.
 \end{hint}
 \[
-\graph[panel]{f(x) = (x - 2)^2 + 4, B(x) = 0x + 5, C(x) = 2x -1, G(x) = -0.5x + 6.5, f(2.9)}
+\graph[panel]{C(x) = 2x -1, G(x) = -0.5x + 6.5, f(x) = (x - 2)^2 + 4, B(x) = 0x + 5,  f(2.9)}
 \]
 
 \medskip
