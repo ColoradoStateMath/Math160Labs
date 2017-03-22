@@ -44,19 +44,25 @@ Let $P$, a constant, be the length of fence that we can use to build the pen. Re
 $P = \answer{2*r*n*\sin(\pi/n)}$.\\
 Since we're keeping the perimeter $P$ constant, we can solve for $r$...\\
 $r = \answer{P/(2*n*\sin(\pi/n))}$.\\
-...and use it to rewrite area in terms of $n$!
+...and use it to rewrite area in terms of $n$!\\
 $A(n) = \answer{P^2*\cot(\pi/n)/(4*n)}$.\\
 
 \bigskip
 
-\hspace{2cm}What is the domain of $A(n)$? \\ %%TODO dropbox integers/real numbers, greater/less than $\answer{3}$
-If we find a critical point at a non-integer like $n = 4.5$ where does it make sense to look for extreme values?\\ %%TODO free response text box
+\hspace{2cm}What is the domain of $A(n)$? \\
+\wordChoice{\choice{real numbers}\choice[correct]{integers}} \wordChoice{\choice[correct]{greater than}\choice{less than}} $\answer{3}$.\\
+\begin{freeResponse}
+If we find a critical point at a non-integer like $n = 4.5$ where does it make sense to look for extreme values?
+\end{freeResponse}
 
 \bigskip
 
 \hspace{2cm}Now we're ready to find the derivative! It may be helpful to simplify your formula for the area first. Rewrite it so that it only has one trig function.\\
-You will want to be able to copy and paste the derivative for later use. Put it in the text box below, or a separate text document, and paste it into the answer box for $A'(n)$ to check your work. We recommend making changes in the text box and pasting from there if it takes more than one try.\\
-%%TODO add free response text box so they can enter the derivative function in ASCII and copy-paste it elsewhere.
+You will want to be able to copy and paste the derivative for later use. Put it in the text box below, or a separate text document, and paste it into the answer box for $A'(n)$ to check your work.\\
+
+\begin{freeResponse}
+We recommend making changes in the text box and pasting from there if it takes more than one try.
+\end{freeResponse}
 $A'(n) = P^2\answer{(\pi/n*\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.\\
 
 \bigskip
@@ -99,10 +105,16 @@ Let's investigate! Hints are provided if you need them.\\
 \end{exercise}
 
 What does this mean? Remember $A(n)$ represents\\ %%TODO mult choice
-As $n$ approaches infinity, what happens to the shapes represented by $A(n)$?\\ %%TODO free response text box
+\begin{freeResponse}
+As $n$ approaches infinity, what happens to the shapes represented by $A(n)$?
+\end{freeResponse}
 
 What shape has maximal area for a fixed perimeter $P$?\\ %%TODO mult choice
-If $P = 4\pi$ then $\lim_{n \to \infty} A(n) = \answer{4\pi}$. Does this answer make sense with respect to the shape in the previous question? Explain.\\ %%TODO free response text box
+If $P = 4\pi$ then $\lim_{n \to \infty} A(n) = \answer{4\pi}$.\\
+\begin{freeResponse}
+Does this answer make sense with respect to the shape that you think is best? Explain.
+\end{freeResponse}
+
 
 
 
