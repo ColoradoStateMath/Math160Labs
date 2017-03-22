@@ -35,34 +35,34 @@ To optimize the area of an n-sided regular polygon we will need a function that 
 How many triangles will we split an n-sided polygon into? $\answer{n}$.\\
 How large is the angle $\theta$ in the diagram? $\answer{\pi/n}$.\\
 What is the area of each triangle? $\answer{r^2*\sin(\pi/n)*\cos(pi/n)}$.\\
-Then what is the total area of an n-sided regular polygon? Area $&=\answer{n*r^2*\sin(\pi/n)*\cos(\pi/n)}$.
+Then what is the total area of an n-sided regular polygon? Area $=\answer{n*r^2*\sin(\pi/n)*\cos(\pi/n)}$.
 
 \bigskip
 
 Recall when finding the optimal dimensions for the bunny pen in class we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
 Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$?\\
-$P &= \answer{2*r*n*\sin(\pi/n)}$.\\
+$P = \answer{2*r*n*\sin(\pi/n)}$.\\
 Since we're keeping the perimeter $P$ constant, we can solve for $r$...\\
-$r &= \answer{P/(2*n*\sin(\pi/n))}$.\\
+$r = \answer{P/(2*n*\sin(\pi/n))}$.\\
 ...and use it to rewrite area in terms of $n$!
-$A(n) &= \answer{P^2*\cot(\pi/n)/(4*n)}$.
+$A(n) = \answer{P^2*\cot(\pi/n)/(4*n)}$.
 
 \bigskip
 
 What is the domain of $A(n)$? \\ %%TODO dropbox integers/real numbers, greater/less than $\answer{3}$
-If we find a critical point at a non-integer like $n &= 4.5$ where does it make sense to look for extreme values? %%TODO free response text box
+If we find a critical point at a non-integer like $n = 4.5$ where does it make sense to look for extreme values? %%TODO free response text box
 
 \bigskip
 
 Now we're ready to find the derivative! It may be helpful to simplify your formula for the area first. Rewrite it so that it only has one trig function.\\
 You will want to be able to copy and paste the derivative for later use. Put it in the text box below, or a separate text document, and paste it into the answer box for $A'(n)$ to check your work. We recommend making changes in the text box and pasting from there if it takes more than one try.\\
 %%TODO add free response text box so they can enter the derivative function in ASCII and copy-paste it elsewhere.
-$A'(n) &= P^2\answer{(\pi/n*\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
+$A'(n) = P^2\answer{(\pi/n*\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
 
 \bigskip
 
 Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where do critical points occur?\\ %%TODO select all correct answers
-Is there anywhere were $A'(n)$ does not exist? $n &= \answer{0}$.\\
+Is there anywhere were $A'(n)$ does not exist? $n = \answer{0}$.\\
 Is this a critical point? %%TODO mult choice
 
 \bigskip
@@ -74,25 +74,25 @@ Where is $A'(n)=0$? %%TODO mult choice "Nowhere, $A'(n)$ is always positive."
 \bigskip
 
 So we found $\answer{0}$ critical points. Does this mean $A(n)$ can't have any extreme values?\\ %%TODO mult choice
-Since $A'(n)$ is always (positive/negative), $A(n)$ is always (increasing/decreasing).\\
-Where does $A(n)$ have a local minimum? $n &= \answer{3}$.\\
-Intuitively, do you think $A(n)$ can (increase/decrease) without bound? (yes/no). %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
+Since $A'(n)$ is always (positive/negative), $A(n)$ is always \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.\\
+Where does $A(n)$ have a local minimum? $n = \answer{3}$.\\
+Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}. %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
 
 \begin{exercise}
 Let's investigate! Hints are provided if you need them.\\
-\[\lim_{n \to \infty}A(n) &= \answer{P^2/(4*\pi)}\]
+\[\lim_{n \to \infty}A(n) = \answer{P^2/(4*\pi)}\]
 \begin{hint}
 	What is the limit of the numerator? $\answer{P^2}$.
 \end{hint}
 \begin{hint}
-  Now consider the denominator. Recall $\lim_{h \to 0} \sin(h)/h &= \answer{1}$.
+  Now consider the denominator. Recall $\lim_{h \to 0} \sin(h)/h = \answer{1}$.
 \end{hint}
 \begin{hint}
   Can we manufacture a denominator for $sin(\pi/n)$ that matches its input?\\
-  $4n\sin(\pi/n) &= 4(1/(1/n))\sin(\pi/n) &= 4\answer{\pi}(\sin(\pi/n)/(\answer{\pi}/n))$.
+  $4n\sin(\pi/n) = 4(1/(1/n))\sin(\pi/n) = 4\answer{\pi}(\sin(\pi/n)/(\answer{\pi}/n))$.
 \end{hint}
 \begin{hint}
-  Then $\lim_{n \to \infty} 4n\sin(\pi/n) &= \lim_{n \to \infty} 4\pi(\sin(\pi/n)/(\pi/n)) = \answer{4\pi}$.
+  Then $\lim_{n \to \infty} 4n\sin(\pi/n) = \lim_{n \to \infty} 4\pi(\sin(\pi/n)/(\pi/n)) = \answer{4\pi}$.
 \end{hint}
 \end{exercise}
 
@@ -100,7 +100,7 @@ What does this mean? Remember $A(n)$ represents\\ %%TODO mult choice
 As $n$ approaches infinity, what happens to the shapes represented by $A(n)$?\\ %%TODO free response text box
 
 What shape has maximal area for a fixed perimeter $P$?\\ %%TODO mult choice
-If $P &= 4\pi$ then $\lim_{n \to \infty} A(n) &= \answer{4\pi}$. Does this answer make sense with respect to the shape in the previous question? Explain.\\ %%TODO free response text box
+If $P = 4\pi$ then $\lim_{n \to \infty} A(n) = \answer{4\pi}$. Does this answer make sense with respect to the shape in the previous question? Explain.\\ %%TODO free response text box
 
 
 
