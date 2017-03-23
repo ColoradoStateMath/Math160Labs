@@ -31,39 +31,34 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 %%%%%% Area of an n-sided regular polygon
 \hspace{2cm}To optimize the area of an n-sided regular polygon we will need a function that represents the area of the polygon. One way to do this is to split the polygon into smaller, more manageable pieces. Since we are working with a regular polygon (A polygon whose sides and angles are all the same size), a natural choice is to cut it into triangles from the center as in the figure below.
 
-\includegraphics[scale=0.25]{Octagon.png}
+%\includegraphics[scale=0.25]{Octagon.png}
 
-\begin{comment}
+%\begin{comment}
 %%Fancy nice picture of a triangle
 \begin{center}
 \usetikzlibrary{calc,patterns,angles,quotes}
 \begin{tikzpicture}
-    %%coordinates of octagon
-   %\coordinate (origin) at (5,5);
-   %\coordinate (a) at (5,0);
-   %\coordinate (a) at (5,10);
-  %\coordinate (b) at (8.525,3.5);
-    %\coordinate (c) at (10,5);
-    %\coordinate (d) at (8.525,8.525);
-    %\coordinate (e) at (5,10);
-    %\coordinate (f) at (3.5,8.525);
-    %\coordinate (f) at (1,1);
-    %\coordinate (g) at (0,5);
-    %\coordinate (h) at (3.5,3.5);
-    %\coordinate (midpoint) at (6.75,6.75);
 
 \coordinate (origin) at (0,0);
-   \coordinate (a) at (0,-5);
-  \coordinate (b) at (3.54,-3.54);
-    \coordinate (c) at (5,0);
-    \coordinate (d) at (3.54,3.54);
-    \coordinate (e) at (0,5);
-    %\coordinate (f) at (3.5,8.525);
-    \coordinate (f) at (-3.54,3.54);
-    \coordinate (g) at (-5,0);
-    \coordinate (h) at (-3.54,-3.54);
-    \coordinate (midpoint) at (1.72,4.27);
+    \coordinate (a) at (4.62,1.91);
+    \coordinate (b) at (1.91,4.62);
+    \coordinate (c) at (-1.91,4.62);
+    \coordinate (d) at (-4.62,1.91);
+    \coordinate (e) at (-4.62,-1.91);
+    \coordinate (f) at (-1.91,-4.62);
+    \coordinate (g) at (1.91,-4.62);
+    \coordinate (h) at (4.62,-1.91);
+    \coordinate (midpoint) at (4.62,0);
 
+    %draw innards
+    \draw[thick, gray] (origin) -- (midpoint);
+    \draw[thick, blue] (a) -- (origin);
+    \draw[thick, blue] (h) -- (origin);
+    \draw[thick, gray] (origin) -- (e);
+    \draw[thick, gray] (c) -- (g);
+    \draw[thick, gray] (d) -- (origin);
+    \draw[thick, gray] (f) -- (b);
+    
     %% draw octagon
     \draw[thick] (a) -- (b);
     \draw[thick] (b) -- (c);
@@ -72,19 +67,13 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
     \draw[thick] (e) -- (f);
     \draw[thick] (f) -- (g);
     \draw[thick] (g) -- (h);
-    \draw[thick] (h) -- (a);
+    \draw[thick,blue] (h) -- (a);
     
-    %draw innards
-    \draw[thick] (origin) -- (midpoint);
-    \draw[thick, gray] (a) -- (e);
-    \draw[thick, gray] (c) -- (g);
-    \draw[thick, gray] (d) -- (h);
-    \draw[thick, gray] (f) -- (b);
     
-    \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = midpoint--origin--e};
+    \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = midpoint--origin--a};
   \end{tikzpicture}
 \end{center}
-\end{comment}
+%\end{comment}
 
 \begin{problem}
 How many triangles will we split an n-sided polygon into? $\answer[given]{n}$.
@@ -167,10 +156,10 @@ Is $n_0$ a critical point?\\
 
 \hspace{2cm}Now to see if $A'(n)=0$ anywhere. This function can't be solved algebraically, but let's persist! After all, algebra is not our only tool! Use the Desmos widget to plot a graph of $A'(n)$.
 
-Replace $A'(n)=n^2$ with the derivative you computed earlier. (You'll need to leave the $P^2$ off.)
+Enter the derivative you computed earlier.
 
 \[
-\graph[panel]{}
+\graph[panel]{y=}
 \]
 
 \begin{problem}
