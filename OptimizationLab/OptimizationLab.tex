@@ -31,6 +31,9 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 %%%%%% Area of an n-sided regular polygon
 \hspace{2cm}To optimize the area of an n-sided regular polygon we will need a function that represents the area of the polygon. One way to do this is to split the polygon into smaller, more manageable pieces. Since we are working with a regular polygon (A polygon whose sides and angles are all the same size), a natural choice is to cut it into triangles from the center as in the figure below.
 
+\includegraphics[scale=0.5]{Octagon.pdf}
+
+\begin{comment}
 %%Fancy nice picture of a triangle
 \begin{center}
 \usetikzlibrary{calc,patterns,angles,quotes}
@@ -81,7 +84,9 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
     \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = midpoint--origin--e};
   \end{tikzpicture}
 \end{center}
+\end{comment}
 
+\begin{problem}
 How many triangles will we split an n-sided polygon into? $\answer[given]{n}$.
 
 How large is the angle $\theta$ in the diagram? $\answer[given]{\pi/n}$.
@@ -90,11 +95,14 @@ What is the area of each triangle? $\answer[given]{r^2\sin(\pi/n)\cos(\pi/n)}$.
 
 Then what is the total area of an n-sided regular polygon? Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
 
+\end{problem}
+
 \bigskip
 
 \hspace{2cm}Recall when finding the optimal dimensions for the bunny pen in class we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
 Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$?
 
+\begin{problem}
 $P = \answer[given]{2(r)(n)\sin(\pi/n)}$.
 
 Since we're keeping the perimeter $P$ constant, we can solve for $r$...
@@ -127,8 +135,11 @@ We recommend making changes in the text box and pasting from there if it takes m
 
 $A'(n) = P^2\,\answer[given]{((\pi/n)\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
 
+\end{problem}
+
 \bigskip
 
+\begin{problem}
 \hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where can critical points occur?
 \begin{selectAll}
     \choice[correct]{Where $A'(n)$ is zero.}
@@ -137,9 +148,11 @@ $A'(n) = P^2\,\answer[given]{((\pi/n)\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
     \choice{Where the $A(n)$ is zero.}
     \choice[correct]{Interior points of the domain of $A(n)$.}
 \end{selectAll}
+\end{problem}
 
 \bigskip
 
+\begin{problem}
 Is there anywhere were $A'(n)$ does not exist? $\,n_0 = \answer{0}$.\\
 Is $n_0$ a critical point?\\
 \begin{multipleChoice}
@@ -148,6 +161,7 @@ Is $n_0$ a critical point?\\
    \choice{No, $n_0$ is not a critical point because $A'(n_0) \ne 0$.}
    \choice[correct]{No, $n_0$ is not a critical point because $n_0$ is not in the domain of $A(n)$.}
 \end{multipleChoice}
+\end{problem}
 
 \bigskip
 
@@ -159,6 +173,7 @@ Replace $A'(n)=n^2$ with the derivative you computed earlier. (You'll need to le
 \graph[panel]{}
 \]
 
+\begin{problem}
 Where is $A'(n)=0$?
 
 \begin{multipleChoice}
@@ -166,9 +181,11 @@ Where is $A'(n)=0$?
     \choice[correct]{$A'(n)$ is never zero, it is always positive}
     \choice{$A'(n)$ is never zero, it is always negative}
 \end{multipleChoice}
+\end{problem}
 
 \bigskip
 
+\begin{problem}
 So we found $\answer{0}$ critical points.\\
 Can $A(n)$ have any extreme values?\\
 \begin{multipleChoice}
@@ -177,12 +194,15 @@ Can $A(n)$ have any extreme values?\\
     \choice{Yes, $A(n)$ can have a maximum at $n=0$}
     \choice[correct]{Yes, extreme values can occur at endpoints too.}
 \end{multipleChoice}
+\end{problem}
 
 \bigskip
 
+\begin{problem}
 Since $A'(n)$ is always \wordChoice{\choice[correct]{positive}\choice{negative}}, $A(n)$ is always \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.\\
 At the endpoint $n=3$ $A(n)$ has a \wordChoice{\choice{local maximum}\choice[correct]{local minimum}\choice{neither a max or a min}}\\
 Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}.\\ %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
+\end{problem}
 
 \medskip
 
@@ -204,6 +224,7 @@ Let's investigate! Hints are provided if you need them.\\
 \end{hint}
 \end{exercise}
 
+\begin{problem}
 What does this limit mean? Remember $A(n)$ represents
 \begin{multipleChoice}
     \choice[correct]{The area of an n-sided regular polygon}
@@ -213,7 +234,9 @@ What does this limit mean? Remember $A(n)$ represents
 \begin{freeResponse}
 As $n$ approaches infinity, what happens to the shapes represented by $A(n)$?
 \end{freeResponse}
+\end{problem}
 
+\begin{problem}
 What shape has maximal area for a fixed perimeter $P$?
 \begin{multipleChoice}
     \choice{A triangle}
@@ -221,14 +244,16 @@ What shape has maximal area for a fixed perimeter $P$?
     \choice{A square}
     \choice[correct]{A circle}
 \end{multipleChoice}
+\end{problem}
 
 \bigskip
 
+\begin{problem}
 If $P = 4\pi$ then \[\lim_{n \to \infty} A(n) = \answer{4\pi}\].\\
 \begin{freeResponse}
 Does this answer make sense with respect to the shape that you think is best? Explain.
 \end{freeResponse}
-
+\end{problem}
 
 
 
