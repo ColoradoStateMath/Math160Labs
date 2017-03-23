@@ -41,8 +41,8 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
     % draw axes
     \fill[black] (origo) circle (0.05);
     \node[below left=1pt of {(0,0)}] {Point $P$};
-    \draw[thick,gray,-;] (origo) -- ++(4,0) node[black,right] {};
-    \draw[thick,dashed, gray,-&gt;] (origo) -- ++(0,-4) node (mary) [black,below] {};
+    \draw[thick,gray,->;] (origo) -- ++(4,0) node[black,right] {};
+    \draw[thick,dashed, gray,->;] (origo) -- ++(0,-4) node (mary) [black,below] {};
  
     % draw roof
     \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
@@ -52,7 +52,7 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
     \fill (bob) circle (0.2);
     \node[below left=5pt of {(1.5,-2.5)}] {$B$};
  
-    \pic [draw, -&gt;, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
+    \pic [draw, ->;, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
   \end{tikzpicture}
 \end{center}
 
