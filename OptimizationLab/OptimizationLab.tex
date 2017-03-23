@@ -32,41 +32,55 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 \hspace{2cm}To optimize the area of an n-sided regular polygon we will need a function that represents the area of the polygon. One way to do this is to split the polygon into smaller, more manageable pieces. Since we are working with a regular polygon (A polygon whose sides and angles are all the same size), a natural choice is to cut it into triangles from the center as in the figure below.
 
 %%Fancy nice picture of a triangle
-%\begin{center}
-%\usetikzlibrary{calc,patterns,angles,quotes}
-%\begin{tikzpicture}
-    %coordinates of octagon
-%    \coordinate (origin) at (200,200);
-%    \coordinate (a) at (200,0);
-%    \coordinate (b) at (341,140);
-%    \coordinate (c) at (400,200);
-%    \coordinate (d) at (341,341);
-%    \coordinate (e) at (200,400);
-%    \coordinate (f) at (140,341);
-%    \coordinate (g) at (0,200);
-%    \coordinate (h) at (140,140);
-%    \coordinate (midpoint) at (270,70)
- 
-    % draw octagon
-%    \draw[thick] (a) -- (b);
-%    \draw[thick] (b) -- (c);
-%    \draw[thick] (c) -- (d);
-%    \draw[thick] (d) -- (e);
-%    \draw[thick] (e) -- (f);
-%    \draw[thick] (f) -- (g);
-%    \draw[thick] (g) -- (h);
-%    \draw[thick] (h) -- (a);
+\begin{center}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\begin{tikzpicture}
+    %%coordinates of octagon
+   %\coordinate (origin) at (5,5);
+   %\coordinate (a) at (5,0);
+   %\coordinate (a) at (5,10);
+  %\coordinate (b) at (8.525,3.5);
+    %\coordinate (c) at (10,5);
+    %\coordinate (d) at (8.525,8.525);
+    %\coordinate (e) at (5,10);
+    %\coordinate (f) at (3.5,8.525);
+    %\coordinate (f) at (1,1);
+    %\coordinate (g) at (0,5);
+    %\coordinate (h) at (3.5,3.5);
+    %\coordinate (midpoint) at (6.75,6.75);
+
+\coordinate (origin) at (0,0);
+   \coordinate (a) at (0,-5);
+  \coordinate (b) at (3.54,-3.54);
+    \coordinate (c) at (5,0);
+    \coordinate (d) at (3.54,3.54);
+    \coordinate (e) at (0,5);
+    %\coordinate (f) at (3.5,8.525);
+    \coordinate (f) at (-3.54,3.54);
+    \coordinate (g) at (-5,0);
+    \coordinate (h) at (-3.54,-3.54);
+    \coordinate (midpoint) at (1.72,4.27);
+
+    %% draw octagon
+    \draw[thick] (a) -- (b);
+    \draw[thick] (b) -- (c);
+    \draw[thick] (c) -- (d);
+    \draw[thick] (d) -- (e);
+    \draw[thick] (e) -- (f);
+    \draw[thick] (f) -- (g);
+    \draw[thick] (g) -- (h);
+    \draw[thick] (h) -- (a);
     
     %draw innards
-%    \draw[thick] (origin) -- (midpoint);
-%    \draw[thick, gray] (origin) -- (f);
-%    \draw[thick, gray] (a) -- (e);
-%    \draw[thick, gray] (c) -- (g);
-%    \draw[thick, gray] (d) -- (h);
+    \draw[thick] (origin) -- (midpoint);
+    \draw[thick, gray] (a) -- (e);
+    \draw[thick, gray] (c) -- (g);
+    \draw[thick, gray] (d) -- (h);
+    \draw[thick, gray] (f) -- (b);
     
-%    \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = a--origin--midpoint};
-%  \end{tikzpicture}
-%\end{center}
+    \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = midpoint--origin--e};
+  \end{tikzpicture}
+\end{center}
 
 How many triangles will we split an n-sided polygon into? $\answer[given]{n}$.
 
@@ -166,7 +180,7 @@ Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choi
 
 \begin{exercise}
 Let's investigate! Hints are provided if you need them.\\
-\[\lim_{n \to \infty}A(n) = \answer{P^2/(4*\pi)}\]
+\[\lim_{n \to \infty}A(n) = \answer{P^2/(4(\pi))}\]
 \begin{hint}
 	What is the limit of the numerator? $\answer{P^2}$.
 \end{hint}
