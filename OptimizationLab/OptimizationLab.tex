@@ -32,6 +32,29 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 \hspace{2cm}To optimize the area of an n-sided regular polygon we will need a function that represents the area of the polygon. One way to do this is to split the polygon into smaller, more manageable pieces. Since we are working with a regular polygon (A polygon whose sides and angles are all the same size), a natural choice is to cut it into triangles from the center as in the figure below.
 
 %%Fancy nice picture of a triangle
+\begin{center}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\begin{tikzpicture}
+    \coordinate (origo) at (0,0);
+    \coordinate (pivot) at (1,5);
+ 
+    % draw axes
+    \fill[black] (origo) circle (0.05);
+    \node[below left=1pt of {(0,0)}] {Point $P$};
+    \draw[thick,gray,-&gt;] (origo) -- ++(4,0) node[black,right] {};
+    \draw[thick,dashed, gray,-&gt;] (origo) -- ++(0,-4) node (mary) [black,below] {};
+ 
+    % draw roof
+    \fill[pattern = north east lines] ($ (origo) + (-1,0) $) rectangle ($ (origo) + (1,0.5) $);
+    \draw[thick] ($ (origo) + (-1,0) $) -- ($ (origo) + (1,0) $);
+ 
+    \draw[thick] (origo) -- ++(300:3) coordinate (bob);
+    \fill (bob) circle (0.2);
+    \node[below left=5pt of {(1.5,-2.5)}] {$B$};
+ 
+    \pic [draw, -&gt;, "$\theta$", angle eccentricity=1.5] {angle = mary--origo--bob};
+  \end{tikzpicture}
+\end{center}
 
 \hspace{2cm}How many triangles will we split an n-sided polygon into? $\answer{n}$.\\
 How large is the angle $\theta$ in the diagram? $\answer{\pi/n}$.\\
