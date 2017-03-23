@@ -52,12 +52,12 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 
     %draw innards
     \draw[thick, gray] (origin) -- (midpoint);
-    \draw[thick, blue] (a) -- (origin);
-    \draw[thick, blue] (h) -- (origin);
     \draw[thick, gray] (origin) -- (e);
     \draw[thick, gray] (c) -- (g);
     \draw[thick, gray] (d) -- (origin);
     \draw[thick, gray] (f) -- (b);
+    \draw[thick, blue] (a) -- (origin);
+    \draw[thick, blue] (h) -- (origin);
     
     %% draw octagon
     \draw[thick] (a) -- (b);
@@ -68,6 +68,7 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
     \draw[thick] (f) -- (g);
     \draw[thick] (g) -- (h);
     \draw[thick,blue] (h) -- (a);
+    \node[above=1pt of {(2.31,.96)}] {$r$};
     
     
     \pic [draw, "$\theta$", angle eccentricity=1.5] {angle = midpoint--origin--a};
@@ -76,20 +77,20 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 %\end{comment}
 
 \begin{problem}
-How many triangles will we split an n-sided polygon into? $\answer[given]{n}$.
+How many triangles will an n-sided polygon split into? $\answer[given]{n}$.
 
-How large is the angle $\theta$ in the diagram? $\answer[given]{\pi/n}$.
+How large is the angle $\theta$ for an n-sided polygon? $\answer[given]{\pi/n}$.
 
-What is the area of each triangle? $\answer[given]{r^2\sin(\pi/n)\cos(\pi/n)}$.
+What is the area of the blue triangle in terms of $n$ and $r$? $\answer[given]{r^2\sin(\pi/n)\cos(\pi/n)}$.
 
-Then what is the total area of an n-sided regular polygon? Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
+Then what is the total area of an n-sided regular polygon in terms of $n$ and $r$? Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
 
 \end{problem}
 
 \bigskip
 
 \hspace{2cm}Recall when finding the optimal dimensions for the bunny pen in class we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
-Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$?
+\hspace{2cm}Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$?
 
 \begin{problem}
 $P = \answer[given]{2(r)(n)\sin(\pi/n)}$.
@@ -98,31 +99,27 @@ Since we're keeping the perimeter $P$ constant, we can solve for $r$...
 
 $r = \answer[given]{P/(2(n)\sin(\pi/n))}$.
 
-...and use it to rewrite area in terms of $n$!
+...and use it to rewrite area in terms of $n$.
 
-$A(n) = \answer[given]{P^2\cot(\pi/n)/(4(n)}$.
+$A(n) = \answer[given]{P^2\cot(\pi/n)/(4n)}$.
 
 \bigskip
 
 What is the domain of $A(n)$? 
 
-\wordChoice{\choice{real numbers}\choice[correct]{integers}} \wordChoice{\choice[correct]{greater than}\choice{less than}} $\answer{3}$.
+\wordChoice{\choice{real numbers}\choice[correct]{integers}} \wordChoice{\choice[correct]{greater than or equal to}\choice{less than or equal to}} $\answer{3}$.
 
 \begin{freeResponse}
-If we find a critical point at a non-integer like $n = 4.5$ where does it make sense to look for extreme values?
+In order to use calculus to find extreme values we need the function to be differentiable, which means it must at least be defined and continuous on an open interval. If we treat $A(n)$ as being defined on real numbers will any maximums or minimums we find still be maximums and minimums when we restrict $n$ to the integers? Why or why not?
 \end{freeResponse}
 
 \bigskip
 
-\hspace{2cm}Now we're ready to find the derivative! It may be helpful to simplify your formula for the area first. Rewrite it so that it only has one trig function.
+\hspace{2cm}Now that we have $A(n)$ in terms of one variable we're ready to find the derivative! It may be helpful to simplify your formula for the area first. Rewrite it so that it only has one trig function.
 
-You will want to be able to copy and paste the derivative for later use. Write it in the text box below, or a separate text document, and paste it into the answer box for $A'(n)$ to check your work.
+You will want to be able to copy and paste the derivative for later use. Write it in a separate text document, and paste it into the answer box below to check your work.
 
-\begin{freeResponse}
-We recommend making changes in the text box and pasting from there if it takes more than one try.
-\end{freeResponse}
-
-$A'(n) = P^2\,\answer[given]{((\pi/n)\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
+$A'(n) = P^2\,\answer[given]{((4\pi)\csc^2(\pi/n)-4\cot(\pi/n))/(16n^2)}$.
 
 \end{problem}
 
@@ -131,30 +128,29 @@ $A'(n) = P^2\,\answer[given]{((\pi/n)\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.
 \begin{problem}
 \hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where can critical points occur?
 \begin{selectAll}
-    \choice[correct]{Where $A'(n)$ is zero.}
+    \choice[correct]{Where $A'(n_0)$ is zero, for an interior point of the domain of $A(n)$.}
     \choice{At endpoints of the domain of $A(n)$.}
-    \choice[correct]{Where $A'(n)$ does not exist.}
-    \choice{Where the $A(n)$ is zero.}
-    \choice[correct]{Interior points of the domain of $A(n)$.}
+    \choice[correct]{Where $A'(n_0)$ does not exist for an interior point of the domain of $A(n)$.}
+    \choice{Where $A(n_0)$ is zero for an interior point of the domain of $A(n)$.}
 \end{selectAll}
 \end{problem}
 
 \bigskip
 
 \begin{problem}
-Is there anywhere were $A'(n)$ does not exist? $\,n_0 = \answer{0}$.\\
-Is $n_0$ a critical point?\\
+Notice $A'(0)$ and $A'(1)$ do not exist. Are $n=0$ and $n=1$ critical points?
 \begin{multipleChoice}
-   \choice{No, $n_0$ is not a critical point because $n_0$ is not in the domain of $A'(n)$.}
-   \choice{Yes, if $A'(n_0)$ does not exist then $n_0$ is a critical point.}
-   \choice{No, $n_0$ is not a critical point because $A'(n_0) \ne 0$.}
-   \choice[correct]{No, $n_0$ is not a critical point because $n_0$ is not in the domain of $A(n)$.}
+    \choice{Yes, if $A'(n_0)$ does not exist then $n_0$ is a critical point.}
+    \choice{Yes, if $A'(n_0)$ does not exist then $n_0$ is a critical point.}
+    \choice{No, $n=0$ and $n=1$ are not critical points because they are not in the domain of $A'(n)$.}
+    \choice{No, $n=0$ and $n=1$ are not critical points because $A'(0) \ne 0$ and $A'(1) \ne 0$.}
+    \choice[correct]{No, $n=0$ and $n=1$ are not critical points because $n=0$ and $n=1$ are not in the domain of $A(n)$.}
 \end{multipleChoice}
 \end{problem}
 
 \bigskip
 
-\hspace{2cm}Now to see if $A'(n)=0$ anywhere. This function can't be solved algebraically, but let's persist! After all, algebra is not our only tool! Use the Desmos widget to plot a graph of $A'(n)$.
+\hspace{2cm}Now to see if $A'(n)=0$ anywhere. This equation can't be solved algebraically, but let's persist! After all, algebra is not our only tool! Use the Desmos widget to plot a graph of $A'(n)$.
 
 Enter the derivative you computed earlier.
 
@@ -166,9 +162,9 @@ Enter the derivative you computed earlier.
 Where is $A'(n)=0$?
 
 \begin{multipleChoice}
-    \choice{$A'(n)=0$ at $n=\infty$}
-    \choice[correct]{$A'(n)$ is never zero, it is always positive}
-    \choice{$A'(n)$ is never zero, it is always negative}
+    \choice{$A'(n)=0$ at $n=50$.}
+    \choice[correct]{$A'(n)$ is never zero, it is always positive for $n>=3$.}
+    \choice{$A'(n)$ is never zero, it is always negative for $n>=3$.}
 \end{multipleChoice}
 \end{problem}
 
@@ -199,17 +195,19 @@ Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choi
 Let's investigate! Hints are provided if you need them.\\
 \[\lim_{n \to \infty}A(n) = \answer{P^2/(4(\pi))}\]
 \begin{hint}
-	What is the limit of the numerator? $\answer{P^2}$.
+	It may be helpful to rewrite $A(n)$ in terms of sine and cosine: $A(n) = \frac{\answer{P^2\cos(\pi/n)}{\answer{4n\sin(\pi/n)}$.
 \end{hint}
+\begin{hint}
+    What is the limit of the numerator? \[\lim_{n \to \infty} P^2\cos(\pi/n) = \answer{P^2}\]
 \begin{hint}
   Now consider the denominator. Recall \[\lim_{h \to 0} \sin(h)/h = \answer{1}\].
 \end{hint}
 \begin{hint}
-  Can we manufacture a denominator for $sin(\pi/n)$ that matches its input?\\
-  $4n\sin(\pi/n) = 4(1/(1/n))\sin(\pi/n) = \frac{4\answer{\pi}(\sin(\pi/n)}{(\answer{\pi}/n))}$.
+  Can we manufacture a denominator for $sin(\frac{\pi}{n})$ that matches the inner function $\frac{\pi}{n}?$\\
+  $4n\sin(\frac{\pi}{n}) = 4\frac{1}{\dfrac{1}{n}})\sin(\frac{\pi}{n}) = \frac{4\answer{\pi}(\sin(\frac{\pi}{n})}{(\answer{\pi}/n))}$.
 \end{hint}
 \begin{hint}
-  Then \[\lim_{n \to \infty} 4n\sin(\pi/n) = \lim_{n \to \infty} \frac{4\pi(\sin(\pi/n)}{(\pi/n))} = \answer{4\pi}\].
+  Then \[\lim_{n \to \infty} 4n\sin(\frac{\pi}{n}) = \lim_{n \to \infty} \frac{4\pi\sin(\frac{\pi}{n})}{(\frac{\pi}{n})} = \answer{4\pi}\].
 \end{hint}
 \end{problem}
 
