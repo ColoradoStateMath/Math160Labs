@@ -26,11 +26,12 @@ Unless stated otherwise, input answers in \underline{exact form} in this lab.
 \maketitle
 
 \hspace{2cm}In class we explored a problem that involved finding the optimal dimensions for a rectangular pen that maximizes its area. Recall that the solution when all four sides of the pen will be built from a limited ammount of fencing is a square. In this lab we will examine what happens if we are not restricted to a rectangle, but build the pen as a regular polygon with n sides. Our goal is finding the optimal number of sides to use when building a pen.\\
+
 \medskip
 %%%%%% Area of an n-sided regular polygon
 \hspace{2cm}To optimize the area of an n-sided regular polygon we will need a function that represents the area of the polygon. One way to do this is to split the polygon into smaller, more manageable pieces. Since we are working with a regular polygon (A polygon whose sides and angles are all the same size), a natural choice is to cut it into triangles from the center as in the figure below.
 
-%%TODO fancy nice picture of a triangle
+%%Fancy nice picture of a triangle
 
 \hspace{2cm}How many triangles will we split an n-sided polygon into? $\answer{n}$.\\
 How large is the angle $\theta$ in the diagram? $\answer{\pi/n}$.\\
@@ -63,23 +64,47 @@ You will want to be able to copy and paste the derivative for later use. Put it 
 \begin{freeResponse}
 We recommend making changes in the text box and pasting from there if it takes more than one try.
 \end{freeResponse}
-$A'(n) = P^2\answer{(\pi/n*\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.\\
+$A'(n) = P^2\,\answer{(\pi/n*\csc^2(\pi/n)-\cot(\pi/n))/n^2}$.\\
 
 \bigskip
 
-\hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where do critical points occur?\\ %%TODO select all correct answers
-Is there anywhere were $A'(n)$ does not exist? $n = \answer{0}$.\\
-Is this a critical point?\\ %%TODO mult choice
+\hspace{2cm}Yikes! Ok, that's a beast, but let's not lose our heads. We're hunting critical points after all. Where do critical points occur?\\
+\begin{selectAll}
+    \choice[correct]{Where $A'(n)$ is zero.}
+    \choice{At endpoints of the domain of $A(n)$.}
+    \choice[correct]{Where $A'(n)$ does not exist.}
+    \choice{Where the $A(n)$ is zero.}
+    \choice[correct]{In interior points of the domain of $A(n)$.}
+\end{selectAll}
+Is there anywhere were $A'(n)$ does not exist? $n_0 = \answer{0}$.\\
+Is $n_0$ a critical point?\\
+\begin{multipleChoice}
+   \choice{No, $n_0$ is not a critical point because $n_0$ is not in the domain of $A'(n)$.}
+   \choice{Yes, if $A'(n_0)$ does not exist then $n_0$ is a critical point.}
+   \choice{No, $n_0$ is not a critical point because $A'(n_0) \ne 0$.}
+   \choice[correct]{No, $n_0$ is not a critical point because $n_0$ is not in the domain of $A(n)$.}
+\end{multipleChoice}
 
 \bigskip
 
 \hspace{2cm}Now to see if $A'(n)=0$ anywhere. This function can't be solved algebraically, but let's persist! After all, algebra is not our only tool! Use the Desmos widget to plot a graph of $A'(n)$.\\
-%%TODO embed desmos widget
-Where is $A'(n)=0$?\\ %%TODO mult choice "Nowhere, $A'(n)$ is always positive."
+\graph[panel]{}
+Where is $A'(n)=0$?\\
+\begin{multipleChoice}
+    \choice{$A'(n)=0$ at $n=\infty$}
+    \choice[correct]{$A'(n)$ is never zero, it is always positive}
+    \choice{$A'(n)$ is never zero, it is always negative}
+\end{multipleChoice}
 
 \bigskip
 
-\hspace{2cm}So we found $\answer{0}$ critical points. Does this mean $A(n)$ can't have any extreme values?\\ %%TODO mult choice
+So we found $\answer{0}$ critical points. Can $A(n)$ have any extreme values?\\
+\begin{multipleChoice}
+    \choice{No, extreme values always occur at critical points.}
+    \choice{No, $A(n)$ is always increasing so there cannot be any extreme values}
+    \choice{Yes, $A(n)$ can have a maximum at $n=0$}
+    \choice[correct]{Yes, extreme values can occur at endpoints too.}
+\end{multipleChoice}
 Since $A'(n)$ is always (positive/negative), $A(n)$ is always \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.\\
 Where does $A(n)$ have a local minimum? $n = \answer{3}$.\\
 Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}.\\ %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
@@ -104,12 +129,23 @@ Let's investigate! Hints are provided if you need them.\\
 \end{hint}
 \end{exercise}
 
-What does this mean? Remember $A(n)$ represents\\ %%TODO mult choice
+What does this mean? Remember $A(n)$ represents\\
+\begin{multipleChocie}
+    \choice[correct]{The area of an n-sided regular polygon}
+    \choice{An n-sided regular polygon}
+    \choice{The perimeter of an n-sided regular polygon}
+\end{multipleChoice}
 \begin{freeResponse}
 As $n$ approaches infinity, what happens to the shapes represented by $A(n)$?
 \end{freeResponse}
 
-What shape has maximal area for a fixed perimeter $P$?\\ %%TODO mult choice
+What shape has maximal area for a fixed perimeter $P$?
+\begin{multipleChoice}
+    \choice{A triangle}
+    \choice{A parabola}
+    \choice{A square}
+    \choice[correct]{A circle}
+\end{multipleChoice}
 If $P = 4\pi$ then $\lim_{n \to \infty} A(n) = \answer{4\pi}$.\\
 \begin{freeResponse}
 Does this answer make sense with respect to the shape that you think is best? Explain.
