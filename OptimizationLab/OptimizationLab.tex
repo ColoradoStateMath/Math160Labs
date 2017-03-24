@@ -83,14 +83,15 @@ How large is the angle $\theta$ for an n-sided polygon? $\answer[given]{\pi/n}$.
 
 What is the area of the blue triangle in terms of $n$ and $r$? $\answer[given]{r^2\sin(\pi/n)\cos(\pi/n)}$.
 
-Then what is the total area of an n-sided regular polygon in terms of $n$ and $r$? Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
+Then what is the total area of an n-sided regular polygon in terms of $n$ and $r$?\\
+Area $=\answer[given]{(n)(r^2)\sin(\pi/n)\cos(\pi/n)}$.
 
 \end{problem}
 
 \bigskip
 
 \hspace{2cm}Recall when finding the optimal dimensions for the bunny pen in class we found an area formula in terms of two variables. We wished to find the derivative, so we needed to rewrite the formula in terms of only one variable. We used the fact that the length of fencing was limited in order to write one variable in terms of the other. Let's try the same strategy here.\\
-\hspace{2cm}Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$?
+\hspace{2cm}Let $P$, a constant, be the length of fence that we can use to build the pen. Refer back to the triangle diagram to compute the perimeter of the polygon in terms of $n$ and $r$.
 
 \begin{problem}
 $P = \answer[given]{2(r)(n)\sin(\pi/n)}$.
@@ -119,7 +120,7 @@ In order to use calculus to find extreme values we need the function to be diffe
 
 You will want to be able to copy and paste the derivative for later use. Write it in a separate text document, and paste it into the answer box below to check your work.
 
-$A'(n) = P^2\,\answer[given]{((4\pi)\csc^2(\pi/n)-4\cot(\pi/n))/(16n^2)}$.
+$A'(n) = P^2\,\answer[given]{((4\pi/n)\csc^2(\pi/n)-4\cot(\pi/n))/(16n^2)}$.
 
 \end{problem}
 
@@ -185,8 +186,10 @@ Can $A(n)$ have any extreme values?\\
 
 \begin{problem}
 Since $A'(n)$ is always \wordChoice{\choice[correct]{positive}\choice{negative}}, $A(n)$ is always \wordChoice{\choice[correct]{increasing}\choice{decreasing}}.\\
+\smallskip
 At the endpoint $n=3$ $A(n)$ has a \wordChoice{\choice{local maximum}\choice[correct]{local minimum}\choice{neither a max or a min}}\\
-Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}.\\ %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
+\smallskip
+Intuitively, do you think that as $n \to \infty$ $A(n)$ can \wordChoice{\choice[correct]{increase}\choice{decrease}} without bound? \wordChoice{\choice{yes}\choice[correct]{no}}.\\ %%This could be interesting to look at. Does a 'yes' indicate a lack of intuition or a lack of motivation?
 \end{problem}
 
 \medskip
@@ -195,7 +198,7 @@ Intuitively, do you think $A(n)$ can \wordChoice{\choice[correct]{increase}\choi
 Let's investigate! Hints are provided if you need them.\\
 \[\lim_{n \to \infty}A(n) = \answer{P^2/(4(\pi))}\]
 \begin{hint}
-	It may be helpful to rewrite $A(n)$ in terms of sine and cosine: $A(n) = \frac{ \answer{P^2\cos(\pi/n)} }{ \answer{4n\sin(\pi/n)} }$.
+	It may be helpful to rewrite $A(n)$ in terms of sine and cosine:\\ $A(n) = \frac{ \answer{P^2\cos(\pi/n)} }{ \answer{4n\sin(\pi/n)} }$.
 \end{hint}
 \begin{hint}
     What is the limit of the numerator? \[\lim_{n \to \infty} P^2\cos(\frac{\pi}{n}) = \answer{P^2}\]
@@ -204,11 +207,17 @@ Let's investigate! Hints are provided if you need them.\\
   Now consider the denominator. Recall \[\lim_{h \to 0} \frac{\sin(h)}{h} = \answer{1}\].
 \end{hint}
 \begin{hint}
-  Can we manufacture a denominator for $sin(\frac{\pi}{n})$ that matches the inner function $\frac{\pi}{n}?$\\
-  $4n\sin(\frac{\pi}{n}) = 4\frac{1}{\dfrac{1}{n}})\sin(\frac{\pi}{n}) = \frac{4\,\answer{\pi}\,\sin(\frac{\pi}{n})}{\answer{\pi/n}}$.
+  Can we manufacture a denominator for $sin(\frac{\pi}{n})$\\ that matches the inner function $\frac{\pi}{n}?$\\
+  \begin{align*}
+     4n\sin(\frac{\pi}{n}) &= 4\frac{1}{1/n})\sin(\frac{\pi}{n})\\
+     &= \frac{4\,\answer{\pi}\,\sin(\frac{\pi}{n})}{\answer{\pi/n}}.
+  \end{align*}
 \end{hint}
 \begin{hint}
-  Then \[\lim_{n \to \infty} 4n\sin(\frac{\pi}{n}) = \lim_{n \to \infty} \frac{4\pi\sin(\frac{\pi}{n})}{(\frac{\pi}{n})} = \answer{4\pi}\].
+  \begin{align*}
+     Then \lim_{n \to \infty} 4n\sin(\frac{\pi}{n}) &= \lim_{n \to \infty} \frac{4\pi\sin(\frac{\pi}{n})}{(\frac{\pi}{n})}\\
+     &= \answer{4\pi}.
+  \end{align*}
 \end{hint}
 \end{problem}
 
@@ -239,7 +248,7 @@ What shape has maximal area for a fixed perimeter $P$?
 \begin{problem}
 If $P = 4\pi$ then \[\lim_{n \to \infty} A(n) = \answer{4\pi}\].\\
 \begin{freeResponse}
-Does this answer make sense with respect to the shape that you think is best? Explain.
+Does this answer make sense with respect to the shape that you think maximizes the area for a fixed perimeter? Explain.
 \end{freeResponse}
 \end{problem}
 
